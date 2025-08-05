@@ -16,51 +16,142 @@
      <link rel="stylesheet" href="../../../static/css/main.css">
 
      <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700;900&display=swap" rel="stylesheet">
-</head>
+     <link rel="stylesheet" href="https://use.typekit.net/aji1rcd.css">
+    </head>
 <style>
     body {
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        width: 100vw;
-        height: 100vh;
+        font-family: "adobe-kis", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        /* width: 100vw;
+        height: 100vh; */
         padding: 0px;
         color: black;
+        text-align: left;
     }
-    .secondary-header {
+    #logo {
+        padding-top: 5vh;
+        color: red;
+        font-size: 50px;
+    }
+    #logo a {
+        color: red;
+        text-decoration: none; /* Underline links */
+    }
+    .large-text {
+        font-size: 50px;
+        color: black;
+    }
+    .large-text a {
+        color: black;
+        text-decoration: none; /* Underline links */
+    }
+    .default-text {
+        font-size: x-large;
+        color: black;
+    }
+    .default-text a {
+        font-size: x-large;
+        color: black;
+        text-decoration: none; /* Underline links */
+    }
+    .small-text {
+        font-size: small;
+        color: black;
+    }
+    .default-text a {
+        font-size: x-large;
+        color: black;
+        text-decoration: none; /* Underline links */
+    }
+    /* FOR POSTS */
+    h1 {
         padding-top: 0;
         font-family: 'Oswald', sans-serif;
-        font-size: 30px;
+        font-weight: bold;
     }
-    .blurb {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-    .blurb a {
+    a {
         color: black;
-        text-decoration: underline; /* Underlines the link */
-        text-decoration-thickness: 1.5px; /* Makes the underline thinner */
-        text-decoration-color: red; /* Makes the underline thinner */
     }
-    .blurb a:hover {
+    .underline a {
         color: red;
-        text-decoration-thickness: 1.5px; /* Makes the underline thinner */
-        text-decoration-color: red; /* Makes the underline thinner */
+        text-decoration-color: red;
     }
+    #underline_hover_red a:hover {
+        color: red;
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        text-decoration-color: red;
+    }
+    #underline_hover a:hover {
+        color: red;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-decoration-color: red;
+    }
+    nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+}
+
+/* Left group hugs the center, pushes to left side */
+.nav-left {
+  display: flex;
+  gap: 2rem;
+  align-items: right;
+}
+
+/* Right group hugs the center, pushes to right side */
+.nav-right {
+  display: flex;
+  gap: 2rem;
+  margin-left: auto; /* pushes right group right */
+}
+
+/* Name centered absolutely */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: x-large;
+  white-space: nowrap;
+}
+
+
 </style>
+
+
+
 <body>
+    
     <div class="container">
-        <div class="row align-items-end justify-content-center logo-box">
-            <div class="col-10 text-center align-items-start">
-                <a href="/mynewportfolio">
-                    <img src="../../../uploads/img/name-logo.png" 
-                         alt="Vasilisa Ioukhnovets" 
-                         class="logo-image img-fluid" 
-                         id="logo-image"
-                         style="padding-top: 35px">
-                </a>
+        <nav>
+            <div class="nav-left">
+              <a href="/mynewportfolio/art">ART</a>
+              <a href="/mynewportfolio/fashion">FASHION</a>
+            </div>
+          
+            <div class="nav-center">
+              <a href="/mynewportfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
+            </div>
+          
+            <div class="nav-right">
+              <a href="/mynewportfolio/misc">FEATURES</a>
+              <a href="/mynewportfolio/contact">CONTACT</a>
+            </div>
+          </nav>
+          
+          
+          
+        <div class="row">
+            <div class="col-md-12 col-sm-12" id="logo">
             </div>
         </div>
     </div>
-    <hr id="line" style="margin-top: 0;">
     <div class="container align-items-center">
         
 <style>
@@ -138,7 +229,7 @@
 <hr> 
 
 <div class = "all" style="align-items: center; justify-content: center; justify-items: center;">
-    <div class="post-title">Rethinking the Foundations of Architecture; the Keeper of the American West; and an Experimental American Painter
+    <div class="post-title" id="underline">Rethinking the Foundations of Architecture; the Keeper of the American West; and an Experimental American Painter
         
         
         <div class="post-date" >10.09.24</div>

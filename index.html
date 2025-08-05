@@ -16,90 +16,165 @@
      <link rel="stylesheet" href="static/css/main.css">
 
      <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700;900&display=swap" rel="stylesheet">
-</head>
+     <link rel="stylesheet" href="https://use.typekit.net/aji1rcd.css">
+    </head>
 <style>
     body {
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        width: 100vw;
-        height: 100vh;
+        font-family: "adobe-kis", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        /* width: 100vw;
+        height: 100vh; */
         padding: 0px;
         color: black;
+        text-align: left;
     }
-    .secondary-header {
+    #logo {
+        padding-top: 5vh;
+        color: red;
+        font-size: 50px;
+    }
+    #logo a {
+        color: red;
+        text-decoration: none; /* Underline links */
+    }
+    .large-text {
+        font-size: 50px;
+        color: black;
+    }
+    .large-text a {
+        color: black;
+        text-decoration: none; /* Underline links */
+    }
+    .default-text {
+        font-size: x-large;
+        color: black;
+    }
+    .default-text a {
+        font-size: x-large;
+        color: black;
+        text-decoration: none; /* Underline links */
+    }
+    .small-text {
+        font-size: small;
+        color: black;
+    }
+    .default-text a {
+        font-size: x-large;
+        color: black;
+        text-decoration: none; /* Underline links */
+    }
+    /* FOR POSTS */
+    h1 {
         padding-top: 0;
         font-family: 'Oswald', sans-serif;
-        font-size: 30px;
+        font-weight: bold;
     }
-    .blurb {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-    .blurb a {
+    a {
         color: black;
-        text-decoration: underline; /* Underlines the link */
-        text-decoration-thickness: 1.5px; /* Makes the underline thinner */
-        text-decoration-color: red; /* Makes the underline thinner */
     }
-    .blurb a:hover {
+    .underline a {
         color: red;
-        text-decoration-thickness: 1.5px; /* Makes the underline thinner */
-        text-decoration-color: red; /* Makes the underline thinner */
+        text-decoration-color: red;
     }
+    #underline_hover_red a:hover {
+        color: red;
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        text-decoration-color: red;
+    }
+    #underline_hover a:hover {
+        color: red;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-decoration-color: red;
+    }
+    nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+}
+
+/* Left group hugs the center, pushes to left side */
+.nav-left {
+  display: flex;
+  gap: 2rem;
+  align-items: right;
+}
+
+/* Right group hugs the center, pushes to right side */
+.nav-right {
+  display: flex;
+  gap: 2rem;
+  margin-left: auto; /* pushes right group right */
+}
+
+/* Name centered absolutely */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: x-large;
+  white-space: nowrap;
+}
+
+
 </style>
+
+
+
 <body>
+    
     <div class="container">
-        <div class="row align-items-end justify-content-center logo-box">
-            <div class="col-10 text-center align-items-start">
-                <a href="/mynewportfolio">
-                    <img src="uploads/img/name-logo.png" 
-                         alt="Vasilisa Ioukhnovets" 
-                         class="logo-image img-fluid" 
-                         id="logo-image"
-                         style="padding-top: 35px">
-                </a>
+        <nav>
+            <div class="nav-left">
+              <a href="/mynewportfolio/art">ART</a>
+              <a href="/mynewportfolio/fashion">FASHION</a>
+            </div>
+          
+            <div class="nav-center">
+              <a href="/mynewportfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
+            </div>
+          
+            <div class="nav-right">
+              <a href="/mynewportfolio/misc">FEATURES</a>
+              <a href="/mynewportfolio/contact">CONTACT</a>
+            </div>
+          </nav>
+          
+          
+          
+        <div class="row">
+            <div class="col-md-12 col-sm-12" id="logo">
             </div>
         </div>
     </div>
-    <hr id="line" style="margin-top: 0;">
     <div class="container align-items-center">
         
 <style>
-  .image-wrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 6 / 4; /* standard landscape */
-  min-height: 150px;   /* fallback if aspect-ratio isn't supported */
-  overflow: hidden;
-}
-
-.gallery-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
+  #line {
+        width: 0;   
+  }
 </style>
-<div>
-</div>
-    
-<div class="featured container mt-4">
 
-  <div class="blurb row mt-4 mb-5 justify-content-center align-items-center">
-    <p class="lead col-md-8 col-sm-12" style="font-size: x-large;">
+<br>
+  <div class="row">
+    <p class=" col-md-12 col-sm-12 large-text  underline" id="underline_hover_red">
       I write and and curate  
-        <a href="/mynewportfolio/art" class="underline">thrilling art and design exhibitions</a> for 
-        <a href="https://thegrandtourist.net/" class="underline">The Grand Tourist</a> with Dan Rubinstein. I have reported on  
-        <a href="/mynewportfolio/fashion" class="underline">high-fashion news</a> for
-        <a href="https://usa.10magazine.com/" class="underline" style="font-style: italic">10 Magazine USA</a> in digital and print. And sometimes, I profile 
-        <a href="/mynewportfolio/misc/post/102923.md/" class="underline">Britain’s most spoiled dogs</a>, the 
-        <a href="/mynewportfolio/misc/post/070324.md/" class="underline">makers behind a very exquisite martini</a>, and 
-        <a href="/mynewportfolio/misc/" class="underline">more curious subjects</a>. If you like what you see, contact me 
-        <a href="/mynewportfolio/contact/" class="underline">here</a>.
+        <a href="/mynewportfolio/art">thrilling art and design exhibitions</a> for 
+        <span style="font-style: italic;">The Grand Tourist</span> podcast with journalist Dan Rubinstein. I have reported on  
+        <a href="/mynewportfolio/fashion">high-fashion news</a> for
+        <span style="font-style: italic;">10 Magazine USA</span> in digital and print. And sometimes, I profile 
+        <a href="/mynewportfolio/misc/post/102923.md/">Britain’s most spoiled dogs</a>, the 
+        <a href="/mynewportfolio/misc/post/070324.md/">makers behind a very exquisite martini</a>, and 
+        <a href="/mynewportfolio/misc/">other curious subjects</a>. If you like what you see, contact me 
+        <a href="/mynewportfolio/contact/">here</a>.
         <br>
-        <br>
-        Website made by me.
+        <span class="default-text">Website by Vasilisa.</span>
     </div>
-</div>
 
 </body>
 

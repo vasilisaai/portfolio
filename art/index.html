@@ -16,635 +16,728 @@
      <link rel="stylesheet" href="../static/css/main.css">
 
      <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700;900&display=swap" rel="stylesheet">
-</head>
+     <link rel="stylesheet" href="https://use.typekit.net/aji1rcd.css">
+    </head>
 <style>
     body {
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        width: 100vw;
-        height: 100vh;
+        font-family: "adobe-kis", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        /* width: 100vw;
+        height: 100vh; */
         padding: 0px;
         color: black;
+        text-align: left;
     }
-    .secondary-header {
+    #logo {
+        padding-top: 5vh;
+        color: red;
+        font-size: 50px;
+    }
+    #logo a {
+        color: red;
+        text-decoration: none; /* Underline links */
+    }
+    .large-text {
+        font-size: 50px;
+        color: black;
+    }
+    .large-text a {
+        color: black;
+        text-decoration: none; /* Underline links */
+    }
+    .default-text {
+        font-size: x-large;
+        color: black;
+    }
+    .default-text a {
+        font-size: x-large;
+        color: black;
+        text-decoration: none; /* Underline links */
+    }
+    .small-text {
+        font-size: small;
+        color: black;
+    }
+    .default-text a {
+        font-size: x-large;
+        color: black;
+        text-decoration: none; /* Underline links */
+    }
+    /* FOR POSTS */
+    h1 {
         padding-top: 0;
         font-family: 'Oswald', sans-serif;
-        font-size: 30px;
+        font-weight: bold;
     }
-    .blurb {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-    .blurb a {
+    a {
         color: black;
-        text-decoration: underline; /* Underlines the link */
-        text-decoration-thickness: 1.5px; /* Makes the underline thinner */
-        text-decoration-color: red; /* Makes the underline thinner */
     }
-    .blurb a:hover {
+    .underline a {
         color: red;
-        text-decoration-thickness: 1.5px; /* Makes the underline thinner */
-        text-decoration-color: red; /* Makes the underline thinner */
+        text-decoration-color: red;
     }
+    #underline_hover_red a:hover {
+        color: red;
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        text-decoration-color: red;
+    }
+    #underline_hover a:hover {
+        color: red;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-decoration-color: red;
+    }
+    nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+}
+
+/* Left group hugs the center, pushes to left side */
+.nav-left {
+  display: flex;
+  gap: 2rem;
+  align-items: right;
+}
+
+/* Right group hugs the center, pushes to right side */
+.nav-right {
+  display: flex;
+  gap: 2rem;
+  margin-left: auto; /* pushes right group right */
+}
+
+/* Name centered absolutely */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: x-large;
+  white-space: nowrap;
+}
+
+
 </style>
+
+
+
 <body>
+    
     <div class="container">
-        <div class="row align-items-end justify-content-center logo-box">
-            <div class="col-10 text-center align-items-start">
-                <a href="/mynewportfolio">
-                    <img src="../uploads/img/name-logo.png" 
-                         alt="Vasilisa Ioukhnovets" 
-                         class="logo-image img-fluid" 
-                         id="logo-image"
-                         style="padding-top: 35px">
-                </a>
+        <nav>
+            <div class="nav-left">
+              <a href="/mynewportfolio/art">ART</a>
+              <a href="/mynewportfolio/fashion">FASHION</a>
+            </div>
+          
+            <div class="nav-center">
+              <a href="/mynewportfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
+            </div>
+          
+            <div class="nav-right">
+              <a href="/mynewportfolio/misc">FEATURES</a>
+              <a href="/mynewportfolio/contact">CONTACT</a>
+            </div>
+          </nav>
+          
+          
+          
+        <div class="row">
+            <div class="col-md-12 col-sm-12" id="logo">
             </div>
         </div>
     </div>
-    <hr id="line" style="margin-top: 0;">
     <div class="container align-items-center">
         
 <style>
-    #logo-image {
-        height: 60px;
-        padding-top: 5px !important;
-    }
-
-    .subheader {
+    body {
         text-align: center;
-        font-size: xx-large;
     }
+    #logo {
+        font-size: x-large;
+        padding-top: 0px;
+        padding-bottom: 40px;
 
+    }
     .post-feed {
-        padding: 20px;
-        margin: 0 auto;
+        text-align: left;
     }
-
     .post {
-        font-size: small;
-        border-bottom: 1px solid #000000;
-        padding: 20px 10px;
+        padding: 10px 10px;
+        align-items: center;
     }
-
     .featured-img img {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-        max-height: 200px;
-    }
-
-    .title {
-        color: #000;
-        text-decoration: none;
-    }
-
-    .title:hover {
-        color: black;
-        text-decoration: underline;
-        text-decoration-thickness: 1.5px;
-        text-decoration-color: red;
-    }
-
-    @media (max-width: 768px) {
-        .post {
-            text-align: left;
-        }
-
-        .featured-img img {
-        width: 100%;
+        max-width: 100%;
         height: auto;
         object-fit: cover;
-        max-height: 200px;
-        }
-
-
-        .post .col-6,
-        .post .col-3 {
-            flex: 0 0 100%;
-            max-width: 100%;
-            margin-bottom: 10px;
-        }
     }
 </style>
 
-
-<div class="secondary-header container text-center">
-    <h1 style="font-weight: bold">ART LISTINGS</h1>
-</div>
-<div class="subheader container">
-    All the art I think you should see.
-</div>
-<hr> 
-<div class="post-feed container">
+<div style="text-align: center;">
+    <h1>ART LISTINGS</h1>
+    <h2 id="default-text">All the art I think you should see, handpicked for readers of <i>The Grand Tourist</i> podcasts weekly newsletter, <i>The Curator</i>. </h2>
+    <hr> 
+    <div class="container post-feed" id="small-text">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/050124.md">
+                        The Meeting of Collections in Marseille; a Monumental Survey at MoMA; and Mark Rothko’s Lesser-Known Paintings (Which Weren’t Rectangles)
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>05.01.24</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/050124.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/112724.md">
+                        Surrealist Furniture; Snapshots of Britain in the ’80s; and a Friendship That Broke Artistic Convention
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>11.27.24</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/112724.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/121824.md">
+                        Basquiat’s Swiss Inspiration; Artists Across the Black Diaspora; Plus More Openings
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>12.18.24</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/121824.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/021925.md">
+                        Reimagining an American Architectural Gem
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>02.19.25</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/021925.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/060524.md">
+                        The Lesser-Known Works of Georgia O’Keeffe, John Baldessari, and Alex Katz; Plus Some Photo History
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>06.05.24</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/060524.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/100924.md">
+                        Rethinking the Foundations of Architecture; the Keeper of the American West; and an Experimental American Painter
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>10.09.24</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/100924.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/021225.md">
+                        A Gallery Remembers a Daring Postmodern Talent
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>02.12.25</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/021225.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/020525.md">
+                        A Gutsy French Painter Gets Her Due; a Spectacular Picture of 1930s New York; More Global Openings
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>02.05.25</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/020525.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/022824.md">
+                        A Trailblazing Abstract Modernist is Remembered; the Marriage of Fashion and Sport is Celebrated; and the Legacy of America’s Most Beloved Chef is Devoured
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>02.28.24</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/022824.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/070724.md">
+                        A Triad of Brilliance Lands in London; An Rising American Painter Takes a Bow; and Inside the Artistry of Cold, Hard Cash
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>07.07.24</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/070724.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/061924.md">
+                        An Activist Expresses True Freedom; Donald Judd in Basel; and More Must-See Exhibitions
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>06.19.24</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/061924.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/072424.md">
+                        Barcelona Remembers the Woman Behind the French New Wave, and São Paulo Celebrates a High-Profile Friendship; See July’s Global Openings
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>07.24.24</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/072424.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/012325.md">
+                        Coming to New York: Cy Twombly’s Poetic Scribbles, a Lebanese-American Writer, and Wild Glassware
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>01.23.25</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/012325.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/022625.md">
+                        Bob Marley’s Kid Photographer, a Punk Legend, and a Painting Pioneer; Global Openings Celebrating Defining Artists
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>02.26.25</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/022625.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/072824.md">
+                        A Forgotten Expressionist Weaver and Painter Rediscovered in Switzerland; Another Look at the Original Queen of the Selfie; the Overlooked Artistry of Ethiopia
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>07.28.24</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/072824.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/011525.md">
+                        Ring In 2025 With These Global Art Openings
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>01.15.25</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/011525.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/090424.md">
+                        Noguchi’s Vision Brought Back to Life; American Design in the Spotlight; A Multitalented Photographer and Painter is Remembered
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>09.04.24</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/090424.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/050824.md">
+                        A Lebanese Painter Who Defied Expectations; Interior Furniture Gets Surreal; Remembering West African Portraiture; and Other Openings This May
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>05.08.24</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/050824.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/010424.md">
+                        What to See This Week by a Italian Photographer, a Turkish Opera Singer, and a Czech Literary Rebel
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>01.04.24</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/010424.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/091824.md">
+                        An Unorthodox Californian Artist Debuts on the East Coast; the Rugged Beauty of Ceramic Furniture; and Other Stateside Openings Not to Miss
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>09.18.24</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/091824.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/063124.md">
+                        A Survey Of Picasso’s Ceramics; New York’s Truly Old-Fashioned Street Photographer; and Hiroshi Sugimoto Brings His Alchemy to Sydney
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>06.31.24</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/063124.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/041024.md">
+                        Remembering Richard Serra’s Paintings; a South African Photographer’s London Debut; a Japanese Emigré Flexes His Creativity 60 Years On
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>04.10.24</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/041024.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+            <div class="row post">
+                <div class="col-12 col-md-6" id="underline_hover">
+                    <a href="https://vasilisaai.github.io/mynewportfolio/art/post/030525.md">
+                        Anselm Kiefer’s Monumental Show; a Cuban Painter Forges a New Path; and More Openings Around the Globe
+                    </a>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div style="font-style: italic;">
+                        <br>
+                        
+                        
+                        <div>03.05.25</div>
+                        <div>The Grand Tourist</div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="featured-img">
+                        <img class="img-fluid" src="../uploads/img/030525.jpg" alt="Article image">
+                    </div>
+                </div>
+            </div>
+            <hr style="background-color: #000;">
+        
+    </div>
     
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/050124.md">
-                    The Meeting of Collections in Marseille; a Monumental Survey at MoMA; and Mark Rothko’s Lesser-Known Paintings (Which Weren’t Rectangles)
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>05.01.24</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/050124.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/112724.md">
-                    Surrealist Furniture; Snapshots of Britain in the ’80s; and a Friendship That Broke Artistic Convention
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>11.27.24</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/112724.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/121824.md">
-                    Basquiat’s Swiss Inspiration; Artists Across the Black Diaspora; Plus More Openings
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>12.18.24</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/121824.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/021925.md">
-                    Reimagining an American Architectural Gem
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>02.19.25</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/021925.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/060524.md">
-                    The Lesser-Known Works of Georgia O’Keeffe, John Baldessari, and Alex Katz; Plus Some Photo History
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>06.05.24</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/060524.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/100924.md">
-                    Rethinking the Foundations of Architecture; the Keeper of the American West; and an Experimental American Painter
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>10.09.24</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/100924.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/021225.md">
-                    A Gallery Remembers a Daring Postmodern Talent
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>02.12.25</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/021225.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/020525.md">
-                    A Gutsy French Painter Gets Her Due; a Spectacular Picture of 1930s New York; More Global Openings
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>02.05.25</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/020525.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/022824.md">
-                    A Trailblazing Abstract Modernist is Remembered; the Marriage of Fashion and Sport is Celebrated; and the Legacy of America’s Most Beloved Chef is Devoured
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>02.28.24</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/022824.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/070724.md">
-                    A Triad of Brilliance Lands in London; An Rising American Painter Takes a Bow; and Inside the Artistry of Cold, Hard Cash
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>07.07.24</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/070724.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/061924.md">
-                    An Activist Expresses True Freedom; Donald Judd in Basel; and More Must-See Exhibitions
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>06.19.24</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/061924.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/072424.md">
-                    Barcelona Remembers the Woman Behind the French New Wave, and São Paulo Celebrates a High-Profile Friendship; See July’s Global Openings
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>07.24.24</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/072424.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/012325.md">
-                    Coming to New York: Cy Twombly’s Poetic Scribbles, a Lebanese-American Writer, and Wild Glassware
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>01.23.25</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/012325.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/022625.md">
-                    Bob Marley’s Kid Photographer, a Punk Legend, and a Painting Pioneer; Global Openings Celebrating Defining Artists
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>02.26.25</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/022625.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/072824.md">
-                    A Forgotten Expressionist Weaver and Painter Rediscovered in Switzerland; Another Look at the Original Queen of the Selfie; the Overlooked Artistry of Ethiopia
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>07.28.24</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/072824.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/011525.md">
-                    Ring In 2025 With These Global Art Openings
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>01.15.25</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/011525.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/090424.md">
-                    Noguchi’s Vision Brought Back to Life; American Design in the Spotlight; A Multitalented Photographer and Painter is Remembered
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>09.04.24</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/090424.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/050824.md">
-                    A Lebanese Painter Who Defied Expectations; Interior Furniture Gets Surreal; Remembering West African Portraiture; and Other Openings This May
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>05.08.24</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/050824.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/010424.md">
-                    What to See This Week by a Italian Photographer, a Turkish Opera Singer, and a Czech Literary Rebel
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>01.04.24</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/010424.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/091824.md">
-                    An Unorthodox Californian Artist Debuts on the East Coast; the Rugged Beauty of Ceramic Furniture; and Other Stateside Openings Not to Miss
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>09.18.24</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/091824.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/063124.md">
-                    A Survey Of Picasso’s Ceramics; New York’s Truly Old-Fashioned Street Photographer; and Hiroshi Sugimoto Brings His Alchemy to Sydney
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>06.31.24</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/063124.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/041024.md">
-                    Remembering Richard Serra’s Paintings; a South African Photographer’s London Debut; a Japanese Emigré Flexes His Creativity 60 Years On
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>04.10.24</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/041024.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-        <div class="post row align-items-center">
-            <div class="col-12 col-md-6 text-start">
-                <a class="title" href="https://vasilisaai.github.io/mynewportfolio/art/post/030525.md">
-                    Anselm Kiefer’s Monumental Show; a Cuban Painter Forges a New Path; and More Openings Around the Globe
-                </a>
-            </div>
-            <div class="col-12 col-md-3 text-md-left text-start mb-2 mb-md-0">
-                <div class="publication" style="font-style: italic; margin: 8px;">
-                    
-                    
-                    <div>03.05.25</div>
-                    <div>The Grand Tourist</div>
-                    <br>
-                </div>
-            </div>
-            <div class="col-12 col-md-3 text-md-end text-align-left">
-                <div class="featured-img">
-                    <img class="img-fluid" src="../uploads/img/030525.jpg" alt="Post Image">
-                </div>
-            </div>
-        </div>
-    
-</div>
-
-
 </body>
 
 </html>
