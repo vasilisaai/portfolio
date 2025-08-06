@@ -46,6 +46,10 @@
         color: black;
         text-decoration: none; /* Underline links */
     }
+    .medium-text {
+        font-size: xx-large;
+        color: black;
+    }
     .default-text {
         font-size: x-large;
         color: black;
@@ -56,19 +60,8 @@
         text-decoration: none; /* Underline links */
     }
     .small-text {
-        font-size: small;
+        font-size: medium;
         color: black;
-    }
-    .default-text a {
-        font-size: x-large;
-        color: black;
-        text-decoration: none; /* Underline links */
-    }
-    /* FOR POSTS */
-    h1 {
-        padding-top: 0;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
     }
     a {
         color: black;
@@ -80,48 +73,37 @@
     #underline_hover_red a:hover {
         color: red;
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
     #underline_hover a:hover {
         color: red;
         text-decoration: underline;
         text-decoration-thickness: 1px;
+        text-underline-offset: 3px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
-    nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-}
-
-/* Left group hugs the center, pushes to left side */
-.nav-left {
-  display: flex;
-  gap: 2rem;
-  align-items: right;
-}
-
-/* Right group hugs the center, pushes to right side */
-.nav-right {
-  display: flex;
-  gap: 2rem;
-  margin-left: auto; /* pushes right group right */
-}
-
-/* Name centered absolutely */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  font-size: x-large;
-  white-space: nowrap;
-}
-
-
+    .custom-toggler-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .custom-toggler-icon span {
+      height: 4px;
+      background-color: red;
+    }
+    button.navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    .dropdown-menu {
+        border-radius: 0px;
+    }
 </style>
 
 
@@ -129,64 +111,44 @@
 <body>
     
     <div class="container">
-        <nav>
-            <div class="nav-left">
-              <a href="/portfolio/art">ART</a>
-              <a href="/portfolio/fashion">FASHION</a>
-            </div>
+        <nav class="navbar navbar-light bg-white justify-content-between">
+            <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
           
-            <div class="nav-center">
-              <a href="/portfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
-            </div>
+            <div class="dropdown">
+              <button id="dropdownMenuButton" class="navbar-toggler" type="button" style="border-width: 0;">
+                <span class="custom-toggler-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
           
-            <div class="nav-right">
-              <a href="/portfolio/misc">FEATURES</a>
-              <a href="/portfolio/contact">CONTACT</a>
+              <!-- ✅ Basic dropdown -->
+              <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+                <a class="dropdown-item" href="/portfolio/art">ART</a>
+                <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
+                <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
+              </div>
             </div>
           </nav>
           
-          
-          
-        <div class="row">
-            <div class="col-md-12 col-sm-12" id="logo">
-            </div>
-        </div>
-    </div>
-    <div class="container align-items-center">
+    <div class="align-items-center">
         
 <style>
     #logo-image {
         height: 60px;
         padding-top: 5px !important;
     }
-    .secondary-header {
-        font-family: 'Oswald', sans-serif;
-        font: bold;
-        font-size: 25px;
-    }
     .post-container {
-        max-width: 800px;
         margin: 0 auto;
         padding: 20px 20px;
         text-align: left;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .featured-img img {
         width: 100%;
         max-height: 600px;
         object-fit: cover;
         margin-bottom: 10px;
-    }
-    .post-title {
-        font-size: 40px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
-    .post-date {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        font-weight: lighter;
     }
     .post-caption {
         font-style: italic;
@@ -212,7 +174,6 @@
     padding: 0;
     cursor: pointer;
     }
-
     #back-button:focus {
         outline: none;
     }
@@ -223,29 +184,24 @@
 }
 </style>
 
-<div class="container text-center" id="smaller">
-    <a class = "secondary-header" href="https://vasilisaai.github.io/portfolio/art/" style="text-decoration: none; color: inherit; font-weight: bold;">ART LISTINGS</a>
-</div>
-<hr> 
+<div class="container" style=" text-align: left;">
+    <h1 class="underline medium-text"><a href="https://vasilisaai.github.io/portfolio/art/"  style="color: #000;">Art Listings</a><h1>
+    <hr style="background-color: #000;">
+    <div class="container" style=" text-align: left;">
+        
+        
+            <div class="default-text" style="margin-bottom: 10px;">02.19.25</div>
+            <div class="medium-text">Reimagining an American Architectural Gem</div>
 
-<div class = "all" style="align-items: center; justify-content: center; justify-items: center;">
-    <div class="post-title" id="underline">Reimagining an American Architectural Gem
-        
-        
-        <div class="post-date" >02.19.25</div>
-    </div>
-
-    <div class="post-container">
-        <div class="featured-img">
-            <img src="../../../uploads/img/021925.jpg" alt="Post Image">
-        </div>
-        <div class="post-caption">An installation by Bobbi Meier at the Driehaus Museum. Photo: Robert Salazar and Robert Heishman</div>
-    
-    
-    
-        
-    
-        <div class="post-body"><p><strong>Cambridge, “Pedro Gómez-Egaña: The Great Learning” (Opens Feb. 21)</strong><br />
+        <div class="post-container">
+            <br>
+            <div class="featured-img">
+                <img src="../../../uploads/img/021925.jpg" alt="Post Image">
+            </div>
+            <div class="small-text" style="font-style: italic;">An installation by Bobbi Meier at the Driehaus Museum. Photo: Robert Salazar and Robert Heishman</div>
+            <br>
+            
+            <div class="post-body" style="font-size: 20px; line-height: 24px;"><p><strong>Cambridge, “Pedro Gómez-Egaña: The Great Learning” (Opens Feb. 21)</strong><br />
  Colombian-born visual artist Pedro Gómez-Egaña makes sculptures, immersive installations, and performances that highlight the changing subjectivity of time and space, particularly in modern culture. In his first Stateside museum exhibition, the artist takes inspiration from the architectural features and optical illusions of the Parthenon to investigate how architecture shapes our lives. A moving set resembles an apartment with shifting, duplicated walls. Gómez-Egaña invites the viewer to rethink how everyday objects and our domestic spaces hold influence over us. <a href="https://listart.mit.edu/exhibitions/pedro-gomez-egana-great-learning"><em>listart.mit.edu</em></a></p>
 <p><strong>Chicago, “A Tale of Today: Materialities” (Until Apr. 27)</strong><br />
  The Driehaus Museum of 19th-century art, architecture, and design is housed in the former home of Chicago banker Samuel Nickerson. After its construction in 1883, the house was the most expensive residence in the city. Signs of Gilded Age America remain in the onyx, exotic wood, stained glass, and 17 types of marble that decorate the interior. For the museum’s largest contemporary exhibition, 14 artists were asked to take inspiration from within the museum, responding to materials such as the long-gone taxidermy that used to decorate the house, the delicacy of the stained-glass windows, and the significance behind Nickerson’s early adoption of the lightbulb. <a href="https://driehausmuseum.org/exhibition/materialities"><em>driehausmuseum.org</em></a></p>
@@ -255,9 +211,25 @@
  In 1925, husband and wife Harold Ross and Jane Grant published the first issue of <em>The New Yorker,</em> envisioning a publication of “gaiety, wit, and satire.” The beloved weekly magazine turns 100 years old this month. In honor of the occasion, the New York Public Library digs through the archives—a monumental collection of over 2,500 boxes—to remember the people, stories, and ideas that have shaped the magazine. With the typewriters used by editor William Shawn and writer Lillian Ross, manuscripts, founding documents, letters from J.D. Salinger, photographs, and, of course, past cartoons, this exhibition is full of journalistic treasures. <a href="https://www.nypl.org/events/exhibitions/new-yorker-100-preview"><em>nypl.org</em></a></p>
 <p><strong>Providence, “Julien Creuzet: Attila cataract your source at the feet of the green peaks will end up in the great sea blue abyss we drowned in the tidal tears of the moon” (Opens Feb. 20)</strong><br />
  At last year’s 60th Venice Biennale, France was represented by Julien Creuzet, the first French-Caribbean artist and one of the youngest to do so. Raised in Martinique and living in Paris, Creuzet explores diaspora and confronts French colonial history across sculpture, video, music, and poetry (unconventionally, he names his shows with lines of poetry). The work is rich with color, noise, and even scent. For the French Pavilion, Creuzet crafted a sensory experience with spools of thread, beads, and wiry silhouettes dripping from the ceiling. Creuzet reimagines this exhibition for Brown University’s contemporary art gallery with 17 artworks, including six massive steel sculptures, video animations, and songs that contemplate the theme of water in the history of both the transatlantic slave trade and colonialism. <a href="https://bell.brown.edu/exhibition/julien-creuzet-attila-cataract-your-source-feet-green-peaks-will-end-great-sea-blue"><em>bell.brown.edu</em></a></p></div>
+        </div>
+</div>
+
     </div>
 </div>
 
+<script>
+    $('#dropdownMenuButton').on('click', function () {
+      $('#dropdownMenu').toggleClass('show');
+    });
+  
+    // Optional: Close dropdown when clicking outside
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('#dropdownMenuButton').length) {
+        $('#dropdownMenu').removeClass('show');
+      }
+    });
+  </script>
+  
 
 </body>
 

@@ -46,6 +46,10 @@
         color: black;
         text-decoration: none; /* Underline links */
     }
+    .medium-text {
+        font-size: xx-large;
+        color: black;
+    }
     .default-text {
         font-size: x-large;
         color: black;
@@ -56,19 +60,8 @@
         text-decoration: none; /* Underline links */
     }
     .small-text {
-        font-size: small;
+        font-size: medium;
         color: black;
-    }
-    .default-text a {
-        font-size: x-large;
-        color: black;
-        text-decoration: none; /* Underline links */
-    }
-    /* FOR POSTS */
-    h1 {
-        padding-top: 0;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
     }
     a {
         color: black;
@@ -80,48 +73,37 @@
     #underline_hover_red a:hover {
         color: red;
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
     #underline_hover a:hover {
         color: red;
         text-decoration: underline;
         text-decoration-thickness: 1px;
+        text-underline-offset: 3px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
-    nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-}
-
-/* Left group hugs the center, pushes to left side */
-.nav-left {
-  display: flex;
-  gap: 2rem;
-  align-items: right;
-}
-
-/* Right group hugs the center, pushes to right side */
-.nav-right {
-  display: flex;
-  gap: 2rem;
-  margin-left: auto; /* pushes right group right */
-}
-
-/* Name centered absolutely */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  font-size: x-large;
-  white-space: nowrap;
-}
-
-
+    .custom-toggler-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .custom-toggler-icon span {
+      height: 4px;
+      background-color: red;
+    }
+    button.navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    .dropdown-menu {
+        border-radius: 0px;
+    }
 </style>
 
 
@@ -129,64 +111,44 @@
 <body>
     
     <div class="container">
-        <nav>
-            <div class="nav-left">
-              <a href="/portfolio/art">ART</a>
-              <a href="/portfolio/fashion">FASHION</a>
-            </div>
+        <nav class="navbar navbar-light bg-white justify-content-between">
+            <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
           
-            <div class="nav-center">
-              <a href="/portfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
-            </div>
+            <div class="dropdown">
+              <button id="dropdownMenuButton" class="navbar-toggler" type="button" style="border-width: 0;">
+                <span class="custom-toggler-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
           
-            <div class="nav-right">
-              <a href="/portfolio/misc">FEATURES</a>
-              <a href="/portfolio/contact">CONTACT</a>
+              <!-- ✅ Basic dropdown -->
+              <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+                <a class="dropdown-item" href="/portfolio/art">ART</a>
+                <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
+                <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
+              </div>
             </div>
           </nav>
           
-          
-          
-        <div class="row">
-            <div class="col-md-12 col-sm-12" id="logo">
-            </div>
-        </div>
-    </div>
-    <div class="container align-items-center">
+    <div class="align-items-center">
         
 <style>
     #logo-image {
         height: 60px;
         padding-top: 5px !important;
     }
-    .secondary-header {
-        font-family: 'Oswald', sans-serif;
-        font: bold;
-        font-size: 25px;
-    }
     .post-container {
-        max-width: 800px;
         margin: 0 auto;
         padding: 20px 20px;
         text-align: left;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .featured-img img {
         width: 100%;
         max-height: 600px;
         object-fit: cover;
         margin-bottom: 10px;
-    }
-    .post-title {
-        font-size: 40px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
-    .post-date {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        font-weight: lighter;
     }
     .post-caption {
         font-style: italic;
@@ -212,7 +174,6 @@
     padding: 0;
     cursor: pointer;
     }
-
     #back-button:focus {
         outline: none;
     }
@@ -223,29 +184,24 @@
 }
 </style>
 
-<div class="container text-center" id="smaller">
-    <a class = "secondary-header" href="https://vasilisaai.github.io/portfolio/art/" style="text-decoration: none; color: inherit; font-weight: bold;">ART LISTINGS</a>
-</div>
-<hr> 
+<div class="container" style=" text-align: left;">
+    <h1 class="underline medium-text"><a href="https://vasilisaai.github.io/portfolio/art/"  style="color: #000;">Art Listings</a><h1>
+    <hr style="background-color: #000;">
+    <div class="container" style=" text-align: left;">
+        
+        
+            <div class="default-text" style="margin-bottom: 10px;">01.15.25</div>
+            <div class="medium-text">Ring In 2025 With These Global Art Openings</div>
 
-<div class = "all" style="align-items: center; justify-content: center; justify-items: center;">
-    <div class="post-title" id="underline">Ring In 2025 With These Global Art Openings
-        
-        
-        <div class="post-date" >01.15.25</div>
-    </div>
-
-    <div class="post-container">
-        <div class="featured-img">
-            <img src="../../../uploads/img/011525.jpg" alt="Post Image">
-        </div>
-        <div class="post-caption">Les fleurs du mal by Belgian surrealist René Magritte, 1946. Photo: Sammlung Scharf-Gerstenberg / Dietmar Katz</div>
-    
-    
-    
-        
-    
-        <div class="post-body"><p><strong>Berlin, “Evil Flowers” (Until May 4)</strong><br />
+        <div class="post-container">
+            <br>
+            <div class="featured-img">
+                <img src="../../../uploads/img/011525.jpg" alt="Post Image">
+            </div>
+            <div class="small-text" style="font-style: italic;">Les fleurs du mal by Belgian surrealist René Magritte, 1946. Photo: Sammlung Scharf-Gerstenberg / Dietmar Katz</div>
+            <br>
+            
+            <div class="post-body" style="font-size: 20px; line-height: 24px;"><p><strong>Berlin, “Evil Flowers” (Until May 4)</strong><br />
  When Charles Baudelaire published <em>Les Fleurs du Mal</em> (“The Flowers of Evil”) in 1857, the poems’ erotic themes caused such a scandal that the court banned six of them. The book, a compilation of 126 poems in six sections, is Baudelaire’s audacious take on the raw beauty, decay, depression, and satisfaction that make up life. Despite—or because of—their controversy, the poems influenced a new aesthetic in art that indulged in evil, eroticism, and immorality. This exhibition examines the side effects of the literary masterpiece, with work made in response to the poems, like French painter Odilon Redon’s charcoal drawing <em>Fleur du Mal</em>. <a href="https://www.smb.museum/en/exhibitions/detail/the-flowers-of-evil/"><em>smb.museum</em></a></p>
 <p><strong>Detroit, “Painted with Silk: The Art of Early American Embroidery” (Until June 15)</strong><br />
  From the 1600s to the 1800s, American schoolgirls were educated in embroidery as well as reading and writing. They made beautifully intricate pieces depicting biblical characters, scenes from Shakespeare’s plays, and their homes and families. In this exhibition, 69 pieces of delicately preserved embroidery are accompanied by needlework by contemporary New York artist Elaine Reichek, who reinvigorates the forgotten art to examine the gender and class roles it reinforced. Included is a work of embroidery on par with a Renaissance painting, made by a girl aged 11. <a href="https://dia.org/events/exhibitions/painted-silk"><em>dia.org</em></a></p>
@@ -255,9 +211,25 @@
  Mississippi considers Dusti Bongé its first Modernist artist, though outside the state her reputation is eclipsed by her contemporaries. Bongé never formally studied art. She had wanted to be an actress, coming to New York in the 1920s to chase her dream. But when she became pregnant, she gave up her career to return home to Biloxi to start a family. She began to dabble in oil and watercolor with her husband, who was an artist. But when his premature death left her a single mother, Bongé started painting seriously, and her practice evolved from realism to surrealism to Abstract Expressionism. Now, 48 years after her last show at the Betty Parsons Gallery in New York, which represented her, Hollis Taggart gallery presents 15 of her paintings from the late 1930s to the 1950s. <a href="https://www.hollistaggart.com/exhibitions/206-dusti-bonge-portals-and-passages-surrealist-works-from-the-1940s/"><em>hollistaggart.com</em></a></p>
 <p><strong>Paris, “Frank Walter: Moon Voyage” (Opens Jan. 10)</strong><br />
  This summer, The Drawing Center in Manhattan presented some of the thousands of drawings, paintings, wooden sculptures, poems, and pages of unpublished memoirs in Frank Walter’s archives, conveying the insatiable creativity of the Antiguan polymath. Walter, born of mixed ancestry in 1926, was a manager at the Antiguan Sugar Syndicate (the first person of color in that position). He would spend nearly 10 years traveling Europe to bring back helpful new technology but experienced racism and confusion in response to his biracial heritage. All the while, art was an escape for him. Walter spent his last 15 years a recluse, surrounded by his writing and art. In his first exhibit in Paris, David Zwirner presents a slice of Walter’s monumental portfolio, zeroing in on his landscapes. In one series, Walter depicts the night sky with spaceships and moon craters in a rainbow of yellow, gray, black, white, and red. He would also paint miniature landscapes on the boxes of Polaroid film cartridges. These will be presented with photographs, notebooks, and correspondences. <a href="https://www.davidzwirner.com/exhibitions/2025/frank-walter-moon-voyage"><em>davidzwirner.com</em></a></p></div>
+        </div>
+</div>
+
     </div>
 </div>
 
+<script>
+    $('#dropdownMenuButton').on('click', function () {
+      $('#dropdownMenu').toggleClass('show');
+    });
+  
+    // Optional: Close dropdown when clicking outside
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('#dropdownMenuButton').length) {
+        $('#dropdownMenu').removeClass('show');
+      }
+    });
+  </script>
+  
 
 </body>
 

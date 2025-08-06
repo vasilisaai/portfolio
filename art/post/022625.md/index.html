@@ -46,6 +46,10 @@
         color: black;
         text-decoration: none; /* Underline links */
     }
+    .medium-text {
+        font-size: xx-large;
+        color: black;
+    }
     .default-text {
         font-size: x-large;
         color: black;
@@ -56,19 +60,8 @@
         text-decoration: none; /* Underline links */
     }
     .small-text {
-        font-size: small;
+        font-size: medium;
         color: black;
-    }
-    .default-text a {
-        font-size: x-large;
-        color: black;
-        text-decoration: none; /* Underline links */
-    }
-    /* FOR POSTS */
-    h1 {
-        padding-top: 0;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
     }
     a {
         color: black;
@@ -80,48 +73,37 @@
     #underline_hover_red a:hover {
         color: red;
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
     #underline_hover a:hover {
         color: red;
         text-decoration: underline;
         text-decoration-thickness: 1px;
+        text-underline-offset: 3px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
-    nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-}
-
-/* Left group hugs the center, pushes to left side */
-.nav-left {
-  display: flex;
-  gap: 2rem;
-  align-items: right;
-}
-
-/* Right group hugs the center, pushes to right side */
-.nav-right {
-  display: flex;
-  gap: 2rem;
-  margin-left: auto; /* pushes right group right */
-}
-
-/* Name centered absolutely */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  font-size: x-large;
-  white-space: nowrap;
-}
-
-
+    .custom-toggler-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .custom-toggler-icon span {
+      height: 4px;
+      background-color: red;
+    }
+    button.navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    .dropdown-menu {
+        border-radius: 0px;
+    }
 </style>
 
 
@@ -129,64 +111,44 @@
 <body>
     
     <div class="container">
-        <nav>
-            <div class="nav-left">
-              <a href="/portfolio/art">ART</a>
-              <a href="/portfolio/fashion">FASHION</a>
-            </div>
+        <nav class="navbar navbar-light bg-white justify-content-between">
+            <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
           
-            <div class="nav-center">
-              <a href="/portfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
-            </div>
+            <div class="dropdown">
+              <button id="dropdownMenuButton" class="navbar-toggler" type="button" style="border-width: 0;">
+                <span class="custom-toggler-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
           
-            <div class="nav-right">
-              <a href="/portfolio/misc">FEATURES</a>
-              <a href="/portfolio/contact">CONTACT</a>
+              <!-- ✅ Basic dropdown -->
+              <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+                <a class="dropdown-item" href="/portfolio/art">ART</a>
+                <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
+                <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
+              </div>
             </div>
           </nav>
           
-          
-          
-        <div class="row">
-            <div class="col-md-12 col-sm-12" id="logo">
-            </div>
-        </div>
-    </div>
-    <div class="container align-items-center">
+    <div class="align-items-center">
         
 <style>
     #logo-image {
         height: 60px;
         padding-top: 5px !important;
     }
-    .secondary-header {
-        font-family: 'Oswald', sans-serif;
-        font: bold;
-        font-size: 25px;
-    }
     .post-container {
-        max-width: 800px;
         margin: 0 auto;
         padding: 20px 20px;
         text-align: left;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .featured-img img {
         width: 100%;
         max-height: 600px;
         object-fit: cover;
         margin-bottom: 10px;
-    }
-    .post-title {
-        font-size: 40px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
-    .post-date {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        font-weight: lighter;
     }
     .post-caption {
         font-style: italic;
@@ -212,7 +174,6 @@
     padding: 0;
     cursor: pointer;
     }
-
     #back-button:focus {
         outline: none;
     }
@@ -223,29 +184,24 @@
 }
 </style>
 
-<div class="container text-center" id="smaller">
-    <a class = "secondary-header" href="https://vasilisaai.github.io/portfolio/art/" style="text-decoration: none; color: inherit; font-weight: bold;">ART LISTINGS</a>
-</div>
-<hr> 
+<div class="container" style=" text-align: left;">
+    <h1 class="underline medium-text"><a href="https://vasilisaai.github.io/portfolio/art/"  style="color: #000;">Art Listings</a><h1>
+    <hr style="background-color: #000;">
+    <div class="container" style=" text-align: left;">
+        
+        
+            <div class="default-text" style="margin-bottom: 10px;">02.26.25</div>
+            <div class="medium-text">Bob Marley’s Kid Photographer, a Punk Legend, and a Painting Pioneer; Global Openings Celebrating Defining Artists</div>
 
-<div class = "all" style="align-items: center; justify-content: center; justify-items: center;">
-    <div class="post-title" id="underline">Bob Marley’s Kid Photographer, a Punk Legend, and a Painting Pioneer; Global Openings Celebrating Defining Artists
-        
-        
-        <div class="post-date" >02.26.25</div>
-    </div>
-
-    <div class="post-container">
-        <div class="featured-img">
-            <img src="../../../uploads/img/022625.jpg" alt="Post Image">
-        </div>
-        <div class="post-caption">Fergus Greer, Leigh Bowery Session 4 Look 17 August 1991. Photo: Copyright Fergus Greer, courtesy Michael Hoppen Gallery.</div>
-    
-    
-    
-        
-    
-        <div class="post-body"><p><strong>London, “Leigh Bowery!” (Opens Feb. 27)</strong><br />
+        <div class="post-container">
+            <br>
+            <div class="featured-img">
+                <img src="../../../uploads/img/022625.jpg" alt="Post Image">
+            </div>
+            <div class="small-text" style="font-style: italic;">Fergus Greer, Leigh Bowery Session 4 Look 17 August 1991. Photo: Copyright Fergus Greer, courtesy Michael Hoppen Gallery.</div>
+            <br>
+            
+            <div class="post-body" style="font-size: 20px; line-height: 24px;"><p><strong>London, “Leigh Bowery!” (Opens Feb. 27)</strong><br />
  To describe Leigh Bowery as a work of art in himself is not a cliché. The Australian in London would paint himself in flamboyant colors and dress in outrageous garments—or nothing at all. “Flesh is my most favorite fabric,” he once said. Bowery’s outrageous performances, musical performances with his band Minty, short-lived Taboo nightclub, and, most famously, modeling for painter Lucian Freud broke all conventions. In 1981, he wrote in his diary, “Fashion, where all girls have clear skin, blue eyes, blonde-blown wavy hair and a size 10 figure, and all the men have clear skin, moustaches, short waved blonde hair and masculine physical appearance, STINKS.” Bowery died prematurely in 1994 of an AIDS-related illness. This legacy-defining exhibition remembers Bowery’s colorful, unapologetic, and influential life. <a href="https://www.tate.org.uk/whats-on/tate-modern/leigh-bowery"><em>tate.org.uk</em></a></p>
 <p><strong>Oslo, “Georg Baselitz: Feet First” (Until May 4)</strong><br />
  Though Georg Baselitz was behind his contemporaries in achieving international fame, the 87-year-old painter’s confrontational work is credited with shaping German art emerging in the aftermath of World War II. “I was born into a destroyed order, a destroyed landscape, a destroyed people, a destroyed society,” he said in 1995. “And I didn’t want to reestablish an order: I had seen enough of so-called order.” In disruption of convention and perhaps also to find his footing in the art world, he’s been painting his work upside down since 1969. In Oslo, the Munch Museum investigates the German painter’s interest in Edvard Munch. Baselitz was so fascinated by a portrait of Munch in his studio with his feet outside the frame that he made a painting of the missing feet. Baselitz’s references to Munch and <em>The Scream</em> are represented in 80 paintings, drawings, and sculptures from the early 1960s to recent years. <a href="https://www.munchmuseet.no/en/exhibitions/georg-baselitz/"><em>munchmuseet.no</em></a></p>
@@ -253,9 +209,25 @@
  It’s rumored that painter Wassily Kandinsky’s interest in abstraction began when he came home to his studio one day to see one of his paintings hanging upside down. Confused, it took him some time to realize it was his own work. Kandinsky would describe the stunning potential of abstraction in the foundational text <em>Point and Line to Plane</em>. This survey of abstractionism starts with 12 works by Kandinsky, following his influence in over 100 works by more than 70 artists, including Josef Albers, Barbara Hepworth, Frank Stella, and Victor Vasarely. <a href="https://www.museum-barberini.de/en/ausstellungen/17400/kandinsky-s-universe-geometric-abstraction-in-the-20th-century"><em>museum-barberini.de</em></a></p>
 <p><strong>Paris, “Dennis Morris: Music + Life” (Until May 18)</strong><br />
  One of British photographer Dennis Morris’s most famous shots is one he took at 16 years old: a portrait of Bob Marley smoking a joint. In 1974, when Morris was attending school in London, he learned that Bob Marley was playing close by. The aspiring photographer went, camera in hand, and asked Marley for a picture. Marley agreed, but also invited him to join the tour. Morris would go on to extensively document Marley, as well as the Sex Pistols and London’s punk scene. All the while, he preferred an inconspicuous Leica camera. “No one takes it seriously. So you get them to open up.” Now, the first retrospective of the photographer in Paris presents the full range of his portfolio filled with legendary musicians. <a href="https://www.mep-fr.org/en/event/dennis-morris-music-life-2/"><em>mep-fr.org</em></a></p></div>
+        </div>
+</div>
+
     </div>
 </div>
 
+<script>
+    $('#dropdownMenuButton').on('click', function () {
+      $('#dropdownMenu').toggleClass('show');
+    });
+  
+    // Optional: Close dropdown when clicking outside
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('#dropdownMenuButton').length) {
+        $('#dropdownMenu').removeClass('show');
+      }
+    });
+  </script>
+  
 
 </body>
 

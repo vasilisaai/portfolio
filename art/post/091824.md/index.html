@@ -46,6 +46,10 @@
         color: black;
         text-decoration: none; /* Underline links */
     }
+    .medium-text {
+        font-size: xx-large;
+        color: black;
+    }
     .default-text {
         font-size: x-large;
         color: black;
@@ -56,19 +60,8 @@
         text-decoration: none; /* Underline links */
     }
     .small-text {
-        font-size: small;
+        font-size: medium;
         color: black;
-    }
-    .default-text a {
-        font-size: x-large;
-        color: black;
-        text-decoration: none; /* Underline links */
-    }
-    /* FOR POSTS */
-    h1 {
-        padding-top: 0;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
     }
     a {
         color: black;
@@ -80,48 +73,37 @@
     #underline_hover_red a:hover {
         color: red;
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
     #underline_hover a:hover {
         color: red;
         text-decoration: underline;
         text-decoration-thickness: 1px;
+        text-underline-offset: 3px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
-    nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-}
-
-/* Left group hugs the center, pushes to left side */
-.nav-left {
-  display: flex;
-  gap: 2rem;
-  align-items: right;
-}
-
-/* Right group hugs the center, pushes to right side */
-.nav-right {
-  display: flex;
-  gap: 2rem;
-  margin-left: auto; /* pushes right group right */
-}
-
-/* Name centered absolutely */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  font-size: x-large;
-  white-space: nowrap;
-}
-
-
+    .custom-toggler-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .custom-toggler-icon span {
+      height: 4px;
+      background-color: red;
+    }
+    button.navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    .dropdown-menu {
+        border-radius: 0px;
+    }
 </style>
 
 
@@ -129,64 +111,44 @@
 <body>
     
     <div class="container">
-        <nav>
-            <div class="nav-left">
-              <a href="/portfolio/art">ART</a>
-              <a href="/portfolio/fashion">FASHION</a>
-            </div>
+        <nav class="navbar navbar-light bg-white justify-content-between">
+            <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
           
-            <div class="nav-center">
-              <a href="/portfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
-            </div>
+            <div class="dropdown">
+              <button id="dropdownMenuButton" class="navbar-toggler" type="button" style="border-width: 0;">
+                <span class="custom-toggler-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
           
-            <div class="nav-right">
-              <a href="/portfolio/misc">FEATURES</a>
-              <a href="/portfolio/contact">CONTACT</a>
+              <!-- ✅ Basic dropdown -->
+              <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+                <a class="dropdown-item" href="/portfolio/art">ART</a>
+                <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
+                <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
+              </div>
             </div>
           </nav>
           
-          
-          
-        <div class="row">
-            <div class="col-md-12 col-sm-12" id="logo">
-            </div>
-        </div>
-    </div>
-    <div class="container align-items-center">
+    <div class="align-items-center">
         
 <style>
     #logo-image {
         height: 60px;
         padding-top: 5px !important;
     }
-    .secondary-header {
-        font-family: 'Oswald', sans-serif;
-        font: bold;
-        font-size: 25px;
-    }
     .post-container {
-        max-width: 800px;
         margin: 0 auto;
         padding: 20px 20px;
         text-align: left;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .featured-img img {
         width: 100%;
         max-height: 600px;
         object-fit: cover;
         margin-bottom: 10px;
-    }
-    .post-title {
-        font-size: 40px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
-    .post-date {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        font-weight: lighter;
     }
     .post-caption {
         font-style: italic;
@@ -212,7 +174,6 @@
     padding: 0;
     cursor: pointer;
     }
-
     #back-button:focus {
         outline: none;
     }
@@ -223,29 +184,24 @@
 }
 </style>
 
-<div class="container text-center" id="smaller">
-    <a class = "secondary-header" href="https://vasilisaai.github.io/portfolio/art/" style="text-decoration: none; color: inherit; font-weight: bold;">ART LISTINGS</a>
-</div>
-<hr> 
+<div class="container" style=" text-align: left;">
+    <h1 class="underline medium-text"><a href="https://vasilisaai.github.io/portfolio/art/"  style="color: #000;">Art Listings</a><h1>
+    <hr style="background-color: #000;">
+    <div class="container" style=" text-align: left;">
+        
+        
+            <div class="default-text" style="margin-bottom: 10px;">09.18.24</div>
+            <div class="medium-text">An Unorthodox Californian Artist Debuts on the East Coast; the Rugged Beauty of Ceramic Furniture; and Other Stateside Openings Not to Miss</div>
 
-<div class = "all" style="align-items: center; justify-content: center; justify-items: center;">
-    <div class="post-title" id="underline">An Unorthodox Californian Artist Debuts on the East Coast; the Rugged Beauty of Ceramic Furniture; and Other Stateside Openings Not to Miss
-        
-        
-        <div class="post-date" >09.18.24</div>
-    </div>
-
-    <div class="post-container">
-        <div class="featured-img">
-            <img src="../../../uploads/img/091824.jpg" alt="Post Image">
-        </div>
-        <div class="post-caption">Arranging a garment designed by Ashlynn Park. Photo: Youn Jung Kim</div>
-    
-    
-    
-        
-    
-        <div class="post-body"><p><strong>Los Angeles, “At Home: Alice Neel in the Queer World” (Until Nov. 2)</strong><br />
+        <div class="post-container">
+            <br>
+            <div class="featured-img">
+                <img src="../../../uploads/img/091824.jpg" alt="Post Image">
+            </div>
+            <div class="small-text" style="font-style: italic;">Arranging a garment designed by Ashlynn Park. Photo: Youn Jung Kim</div>
+            <br>
+            
+            <div class="post-body" style="font-size: 20px; line-height: 24px;"><p><strong>Los Angeles, “At Home: Alice Neel in the Queer World” (Until Nov. 2)</strong><br />
  “I don’t paint like a woman is supposed to paint,” said American painter Alice Neel. “Thank God, art doesn’t bother about things like that.” Her portraits, neither dainty nor neat, burst with the dynamic personality of their sitter. Through the midcentury, Neel’s portraits of poets, thinkers, feminists, and friends—often from queer and marginalized communities—defied traditional expectation. Works on view here feature writer Allen Ginsberg, “poet among writers” Frank O’Hara, poet Adrienne Rich, and congresswoman Bella Abzug, among others. <a href="https://www.davidzwirner.com/exhibitions/2024/at-home-alice-neel-in-the-queer-world"><em>davidzwirner.com</em></a></p>
 <p><strong>New York, “Casey Zablocki” (Until Nov. 14)</strong><br />
  For the manifestation of his oversize ceramic pieces, Montana-based artist Casey Zablocki fires up one of the largest wood-fired kilns in the States, stoking it 24/7 for a labor-intensive eight days. Out come brutalist, industrial sculptures—some nine feet high—with stunning weathered complexions. This is his second solo show with the gallery (his work quickly sold out in the first), presenting 20 hefty new ceramic furniture pieces that required two years of determined research and a custom-made clay recipe to achieve such scale. <a href="https://rwguildgalleryny.com/"><em>rwguildgalleryny.com</em></a></p>
@@ -255,9 +211,25 @@
  In 1964, Franklin Williams was studying abstract expressionism when art critic John Coplans saw the intricately patterned drawings he had been doing outside of class. “This is who you are,” Coplans said to the budding painter, coaxing him to pursue the unconventional. Williams’ subsequent career has only ever been in this vein. Institutionally adverse (he hadn’t been to a museum before he was 27, going to his own show) and a deeply meditative artist, Williams creates only for himself. Living and working in California, this is the artist’s first survey on the East Coast. Featured are 40 paintings, sculptures, and works on paper, peppered with little dots, buttons, and string stitches. <a href="https://bell.brown.edu/exhibition/franklin-williams-its-about-love"><em>bell.brown.edu</em></a></p>
 <p><strong>Washington, D.C., “Ralph Steadman: And Another Thing” (Until Dec. 8)</strong>
  “I get my best ideas in a thunderstorm,” says British illustrator Ralph Steadman. Indeed, his illustrations—the most famous of them are from Hunter S. Thompson’s Fear and Loathing in Las Vegas—are staggering, inspired by the underbelly of humanity. This survey covers six decades of his career, with nearly 150 works including early sketchbooks, his submissions to UK satire publications like Punch and Private Eye, political cartoons, and illustrated kids books. <a href="https://www.american.edu/cas/museum/2024/and-another-thing-steadman.cfm"><em>american.edu</em></a></p></div>
+        </div>
+</div>
+
     </div>
 </div>
 
+<script>
+    $('#dropdownMenuButton').on('click', function () {
+      $('#dropdownMenu').toggleClass('show');
+    });
+  
+    // Optional: Close dropdown when clicking outside
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('#dropdownMenuButton').length) {
+        $('#dropdownMenu').removeClass('show');
+      }
+    });
+  </script>
+  
 
 </body>
 

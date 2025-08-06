@@ -46,6 +46,10 @@
         color: black;
         text-decoration: none; /* Underline links */
     }
+    .medium-text {
+        font-size: xx-large;
+        color: black;
+    }
     .default-text {
         font-size: x-large;
         color: black;
@@ -56,19 +60,8 @@
         text-decoration: none; /* Underline links */
     }
     .small-text {
-        font-size: small;
+        font-size: medium;
         color: black;
-    }
-    .default-text a {
-        font-size: x-large;
-        color: black;
-        text-decoration: none; /* Underline links */
-    }
-    /* FOR POSTS */
-    h1 {
-        padding-top: 0;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
     }
     a {
         color: black;
@@ -80,48 +73,37 @@
     #underline_hover_red a:hover {
         color: red;
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
     #underline_hover a:hover {
         color: red;
         text-decoration: underline;
         text-decoration-thickness: 1px;
+        text-underline-offset: 3px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
-    nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-}
-
-/* Left group hugs the center, pushes to left side */
-.nav-left {
-  display: flex;
-  gap: 2rem;
-  align-items: right;
-}
-
-/* Right group hugs the center, pushes to right side */
-.nav-right {
-  display: flex;
-  gap: 2rem;
-  margin-left: auto; /* pushes right group right */
-}
-
-/* Name centered absolutely */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  font-size: x-large;
-  white-space: nowrap;
-}
-
-
+    .custom-toggler-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .custom-toggler-icon span {
+      height: 4px;
+      background-color: red;
+    }
+    button.navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    .dropdown-menu {
+        border-radius: 0px;
+    }
 </style>
 
 
@@ -129,64 +111,44 @@
 <body>
     
     <div class="container">
-        <nav>
-            <div class="nav-left">
-              <a href="/portfolio/art">ART</a>
-              <a href="/portfolio/fashion">FASHION</a>
-            </div>
+        <nav class="navbar navbar-light bg-white justify-content-between">
+            <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
           
-            <div class="nav-center">
-              <a href="/portfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
-            </div>
+            <div class="dropdown">
+              <button id="dropdownMenuButton" class="navbar-toggler" type="button" style="border-width: 0;">
+                <span class="custom-toggler-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
           
-            <div class="nav-right">
-              <a href="/portfolio/misc">FEATURES</a>
-              <a href="/portfolio/contact">CONTACT</a>
+              <!-- ✅ Basic dropdown -->
+              <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+                <a class="dropdown-item" href="/portfolio/art">ART</a>
+                <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
+                <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
+              </div>
             </div>
           </nav>
           
-          
-          
-        <div class="row">
-            <div class="col-md-12 col-sm-12" id="logo">
-            </div>
-        </div>
-    </div>
-    <div class="container align-items-center">
+    <div class="align-items-center">
         
 <style>
     #logo-image {
         height: 60px;
         padding-top: 5px !important;
     }
-    .secondary-header {
-        font-family: 'Oswald', sans-serif;
-        font: bold;
-        font-size: 25px;
-    }
     .post-container {
-        max-width: 800px;
         margin: 0 auto;
         padding: 20px 20px;
         text-align: left;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .featured-img img {
         width: 100%;
         max-height: 600px;
         object-fit: cover;
         margin-bottom: 10px;
-    }
-    .post-title {
-        font-size: 40px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
-    .post-date {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        font-weight: lighter;
     }
     .post-caption {
         font-style: italic;
@@ -212,7 +174,6 @@
     padding: 0;
     cursor: pointer;
     }
-
     #back-button:focus {
         outline: none;
     }
@@ -223,29 +184,24 @@
 }
 </style>
 
-<div class="container text-center" id="smaller">
-    <a class = "secondary-header" href="https://vasilisaai.github.io/portfolio/art/" style="text-decoration: none; color: inherit; font-weight: bold;">ART LISTINGS</a>
-</div>
-<hr> 
+<div class="container" style=" text-align: left;">
+    <h1 class="underline medium-text"><a href="https://vasilisaai.github.io/portfolio/art/"  style="color: #000;">Art Listings</a><h1>
+    <hr style="background-color: #000;">
+    <div class="container" style=" text-align: left;">
+        
+        
+            <div class="default-text" style="margin-bottom: 10px;">07.24.24</div>
+            <div class="medium-text">Barcelona Remembers the Woman Behind the French New Wave, and São Paulo Celebrates a High-Profile Friendship; See July’s Global Openings</div>
 
-<div class = "all" style="align-items: center; justify-content: center; justify-items: center;">
-    <div class="post-title" id="underline">Barcelona Remembers the Woman Behind the French New Wave, and São Paulo Celebrates a High-Profile Friendship; See July’s Global Openings
-        
-        
-        <div class="post-date" >07.24.24</div>
-    </div>
-
-    <div class="post-container">
-        <div class="featured-img">
-            <img src="../../../uploads/img/072424.jpg" alt="Post Image">
-        </div>
-        <div class="post-caption">Agnes Varda on the set of the film Les Glaneurs et la Glaneuse, 1999. Photo: Didier Doussin, Courtesy CCCB and Cine Tamaris—Social Animals</div>
-    
-    
-    
-        
-    
-        <div class="post-body"><p><strong>Barcelona, “Agnès Varda: Photographing, Filming, Recycling” (Until Dec. 8)</strong><br />
+        <div class="post-container">
+            <br>
+            <div class="featured-img">
+                <img src="../../../uploads/img/072424.jpg" alt="Post Image">
+            </div>
+            <div class="small-text" style="font-style: italic;">Agnes Varda on the set of the film Les Glaneurs et la Glaneuse, 1999. Photo: Didier Doussin, Courtesy CCCB and Cine Tamaris—Social Animals</div>
+            <br>
+            
+            <div class="post-body" style="font-size: 20px; line-height: 24px;"><p><strong>Barcelona, “Agnès Varda: Photographing, Filming, Recycling” (Until Dec. 8)</strong><br />
  She was the grandmother of the French New Wave, inspiring its hallmarks—nonlinear plot, saturated mood, and creative liberties—before the genre even existed. Often described in the same sentence as “fierce,” “free,” and always “ahead of her time,” French photographer and filmmaker Agnès Varda produced more than 40 short and feature-length films that mingle private narratives with socially conscious documentary. This survey examines her radical work and life, with a selection of her short films and previously unseen photography, including a series from her trip to Catalonia in 1955, where she shot a portrait of Dalí. <a href="https://www.cccb.org/en/exhibitions/file/agnes-varda/243778"><em>cccb.org</em></a></p>
 <p><strong>Cleveland, “Picturing the Border” (Until Jan. 5)</strong><br />
  With photographs by Latino, Mexican, and Chicano artists, this showcase examines the implications of the Mexican American border on personal definitions of citizenship, nationality, and selfhood. From intimate portraits by Chicana photographer Laura Aguilar to documentation of border crossings by Mexican photographer Graciela Iturbide, the roughly four dozen photographs seek to take back the negative representation of the border prevalent in the media. <a href="https://www.clevelandart.org/about/press/picturing-border-exhibition-opens-cleveland-museum-art"><em>clevelandart.org</em></a></p>
@@ -255,9 +211,25 @@
  The friendship of Catalan surrealist painter Joan Miró and American sculptor Alexander Calder, which began in 1928, seems like fate—one can clearly see the shared aesthetics and curiosities between their work. Though they were later divided by an ocean and World War II, they produced remarkably similar bodies of work inadvertently titled “Constellations.” In 1936, <em>The New York Times</em> described Calder’s mobiles as “living Miró abstractions.” This exhibit, sponsored by Igautemi, studies the consequences of this friendship on abstract art in Brazil, bringing together 150 works by the two greats and by artists influenced by their liminal forms, such as Hélio Oiticica, Mary Vieira, Milton Dacosta, and Tomie Ohtake. <a href="https://www.institutotomieohtake.org.br/exposicoes/calder-miro/"><em>institutotomieohtake.org</em></a></p>
 <p><strong>Toronto, “Thirty-Six Brooches” (Until Sept. 2)</strong><br />
  The most popular accessory to spice up a jacket, the brooch has had a mainstream renaissance this year on red carpets and runways. And why not? The jewelry is versatile—whether it’s a humble outlet for personal taste, bedazzled statement of status, or a pin-sized political statement. The pins don’t get much attention besides, which this presentation aims to change. With 36 elegant brooches designed by contemporary Canadian jewelers, it examines how the storied piece (once purely utilitarian) has come to express so much. <a href="https://harbourfrontcentre.com/event/thirty-six-brooches/"><em>harbourfrontcentre.com</em></a></p></div>
+        </div>
+</div>
+
     </div>
 </div>
 
+<script>
+    $('#dropdownMenuButton').on('click', function () {
+      $('#dropdownMenu').toggleClass('show');
+    });
+  
+    // Optional: Close dropdown when clicking outside
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('#dropdownMenuButton').length) {
+        $('#dropdownMenu').removeClass('show');
+      }
+    });
+  </script>
+  
 
 </body>
 

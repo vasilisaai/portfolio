@@ -46,6 +46,10 @@
         color: black;
         text-decoration: none; /* Underline links */
     }
+    .medium-text {
+        font-size: xx-large;
+        color: black;
+    }
     .default-text {
         font-size: x-large;
         color: black;
@@ -56,19 +60,8 @@
         text-decoration: none; /* Underline links */
     }
     .small-text {
-        font-size: small;
+        font-size: medium;
         color: black;
-    }
-    .default-text a {
-        font-size: x-large;
-        color: black;
-        text-decoration: none; /* Underline links */
-    }
-    /* FOR POSTS */
-    h1 {
-        padding-top: 0;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
     }
     a {
         color: black;
@@ -80,48 +73,37 @@
     #underline_hover_red a:hover {
         color: red;
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
     #underline_hover a:hover {
         color: red;
         text-decoration: underline;
         text-decoration-thickness: 1px;
+        text-underline-offset: 3px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
-    nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-}
-
-/* Left group hugs the center, pushes to left side */
-.nav-left {
-  display: flex;
-  gap: 2rem;
-  align-items: right;
-}
-
-/* Right group hugs the center, pushes to right side */
-.nav-right {
-  display: flex;
-  gap: 2rem;
-  margin-left: auto; /* pushes right group right */
-}
-
-/* Name centered absolutely */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  font-size: x-large;
-  white-space: nowrap;
-}
-
-
+    .custom-toggler-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .custom-toggler-icon span {
+      height: 4px;
+      background-color: red;
+    }
+    button.navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    .dropdown-menu {
+        border-radius: 0px;
+    }
 </style>
 
 
@@ -129,64 +111,44 @@
 <body>
     
     <div class="container">
-        <nav>
-            <div class="nav-left">
-              <a href="/portfolio/art">ART</a>
-              <a href="/portfolio/fashion">FASHION</a>
-            </div>
+        <nav class="navbar navbar-light bg-white justify-content-between">
+            <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
           
-            <div class="nav-center">
-              <a href="/portfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
-            </div>
+            <div class="dropdown">
+              <button id="dropdownMenuButton" class="navbar-toggler" type="button" style="border-width: 0;">
+                <span class="custom-toggler-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
           
-            <div class="nav-right">
-              <a href="/portfolio/misc">FEATURES</a>
-              <a href="/portfolio/contact">CONTACT</a>
+              <!-- ✅ Basic dropdown -->
+              <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+                <a class="dropdown-item" href="/portfolio/art">ART</a>
+                <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
+                <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
+              </div>
             </div>
           </nav>
           
-          
-          
-        <div class="row">
-            <div class="col-md-12 col-sm-12" id="logo">
-            </div>
-        </div>
-    </div>
-    <div class="container align-items-center">
+    <div class="align-items-center">
         
 <style>
     #logo-image {
         height: 60px;
         padding-top: 5px !important;
     }
-    .secondary-header {
-        font-family: 'Oswald', sans-serif;
-        font: bold;
-        font-size: 25px;
-    }
     .post-container {
-        max-width: 800px;
         margin: 0 auto;
         padding: 20px 20px;
         text-align: left;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .featured-img img {
         width: 100%;
         max-height: 600px;
         object-fit: cover;
         margin-bottom: 10px;
-    }
-    .post-title {
-        font-size: 40px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
-    .post-date {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        font-weight: lighter;
     }
     .post-caption {
         font-style: italic;
@@ -212,7 +174,6 @@
     padding: 0;
     cursor: pointer;
     }
-
     #back-button:focus {
         outline: none;
     }
@@ -223,29 +184,24 @@
 }
 </style>
 
-<div class="container text-center" id="smaller">
-    <a class = "secondary-header" href="https://vasilisaai.github.io/portfolio/art/" style="text-decoration: none; color: inherit; font-weight: bold;">ART LISTINGS</a>
-</div>
-<hr> 
+<div class="container" style=" text-align: left;">
+    <h1 class="underline medium-text"><a href="https://vasilisaai.github.io/portfolio/art/"  style="color: #000;">Art Listings</a><h1>
+    <hr style="background-color: #000;">
+    <div class="container" style=" text-align: left;">
+        
+        
+            <div class="default-text" style="margin-bottom: 10px;">12.18.24</div>
+            <div class="medium-text">Basquiat’s Swiss Inspiration; Artists Across the Black Diaspora; Plus More Openings</div>
 
-<div class = "all" style="align-items: center; justify-content: center; justify-items: center;">
-    <div class="post-title" id="underline">Basquiat’s Swiss Inspiration; Artists Across the Black Diaspora; Plus More Openings
-        
-        
-        <div class="post-date" >12.18.24</div>
-    </div>
-
-    <div class="post-container">
-        <div class="featured-img">
-            <img src="../../../uploads/img/121824.jpg" alt="Post Image">
-        </div>
-        <div class="post-caption">From Left: “Gary Indiana Veiled” by Peter Hujar. Photo: Copyright The Peter Hujar Archive; “Headless Man Trying to Drink” by Yinka Shonibare, 2005. Photo: Courtesy LACMA.</div>
-    
-    
-    
-        
-    
-        <div class="post-body"><p><strong>Los Angeles, “Imagining Black Diasporas: 21st-Century Art and Poetics” (Until Aug. 3)</strong><br />
+        <div class="post-container">
+            <br>
+            <div class="featured-img">
+                <img src="../../../uploads/img/121824.jpg" alt="Post Image">
+            </div>
+            <div class="small-text" style="font-style: italic;">From Left: “Gary Indiana Veiled” by Peter Hujar. Photo: Copyright The Peter Hujar Archive; “Headless Man Trying to Drink” by Yinka Shonibare, 2005. Photo: Courtesy LACMA.</div>
+            <br>
+            
+            <div class="post-body" style="font-size: 20px; line-height: 24px;"><p><strong>Los Angeles, “Imagining Black Diasporas: 21st-Century Art and Poetics” (Until Aug. 3)</strong><br />
  Artists working across the Black diaspora are often described as reconnecting with and preserving their heritage. This exhibition emphasizes the creativity and reinvention that this process entails, from South African artist Igshaan Adams’ woven and beaded sculptures and Guyanese painter Sandra Brewster’s large portraits of blurred faces, to Widline Cadet’s poignant photography centering on her experience emigrating from Haiti to the U.S. Exploring the diaspora as a source of creativity, this exhibition brings together 70 paintings, sculptures, photographs, and multimedia works by 60 artists. <a href="https://www.lacma.org/art/exhibition/imagining-black-diasporas-21st-century-art-and-poetics"><em>lacma.org</em></a></p>
 <p><strong>New York, “Jeanne Moutoussamy-Ashe and the Last Gullah Islands” (Until May 2025)</strong> <br />
  On the southernmost coast of South Carolina, there’s a small three- by nine-mile island, Daufuskie Island. In 1977, American photographer Jeanne Moutoussamy-Ashe photographed the island and its inhabitants, the Gullah Geechee, most of whom are descendants of former slaves who acquired land from white plantation owners after the Civil War. Real estate developers were closing in on the island, threatening the unique culture at home there. A selection of Moutoussamy-Ashe’s photographs on view here preserve a community on the brink of change. <a href="https://whitney.org/exhibitions/jeanne-moutoussamy-ashe-last-gullah-islands#exhibition-about"><em>whitney.org</em></a></p>
@@ -255,9 +211,25 @@
  Gerhard Richter’s incredibly varied output makes him hard to define as an artist, though the label “greatest living painter” has sufficed. The German painter’s trademark blurs the line between image and painting, reproducing photos with an eloquent blur. In 2010, Richter started the Strip series, where he digitally split images into thin multicolored stripes. Now, Gagosian Rome projects their entire space with Richter’s latest addition to the series, an immersive film that’s accompanied by a trumpet score. <a href="https://gagosian.com/exhibitions/2024/gerhard-richter-moving-picture-946-3-kyoto-version/"><em>gagosian.com</em></a></p>
 <p><strong>St. Moritz, “Jean-Michel Basquiat” (Until March 29)</strong><br />
  In 1982, Jean-Michel Basquiat traveled to Switzerland for his first European exhibit opening, in Zurich. He would return more than a dozen times to St. Moritz, Zurich, and Appenzell between then and his premature death in 1988. Basquiat was taken with Switzerland, particularly the tranquil Engadin region, and introduced alpine trees, white mountains, and skiers amid the themes of Black history in his paintings. Examining this unexplored side of Basquiat, Hauser &amp; Wirth, St. Moritz brings together “The Dutch Settlers” (1982), “Skifahrer” (1983), and “Big Snow” (1984). <a href="https://www.hauserwirth.com/hauser-wirth-exhibitions/jean-michel-basquiat-engadin/"><em>hauserwirth.com</em></a></p></div>
+        </div>
+</div>
+
     </div>
 </div>
 
+<script>
+    $('#dropdownMenuButton').on('click', function () {
+      $('#dropdownMenu').toggleClass('show');
+    });
+  
+    // Optional: Close dropdown when clicking outside
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('#dropdownMenuButton').length) {
+        $('#dropdownMenu').removeClass('show');
+      }
+    });
+  </script>
+  
 
 </body>
 

@@ -46,6 +46,10 @@
         color: black;
         text-decoration: none; /* Underline links */
     }
+    .medium-text {
+        font-size: xx-large;
+        color: black;
+    }
     .default-text {
         font-size: x-large;
         color: black;
@@ -56,19 +60,8 @@
         text-decoration: none; /* Underline links */
     }
     .small-text {
-        font-size: small;
+        font-size: medium;
         color: black;
-    }
-    .default-text a {
-        font-size: x-large;
-        color: black;
-        text-decoration: none; /* Underline links */
-    }
-    /* FOR POSTS */
-    h1 {
-        padding-top: 0;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
     }
     a {
         color: black;
@@ -80,48 +73,37 @@
     #underline_hover_red a:hover {
         color: red;
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
     #underline_hover a:hover {
         color: red;
         text-decoration: underline;
         text-decoration-thickness: 1px;
+        text-underline-offset: 3px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
-    nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-}
-
-/* Left group hugs the center, pushes to left side */
-.nav-left {
-  display: flex;
-  gap: 2rem;
-  align-items: right;
-}
-
-/* Right group hugs the center, pushes to right side */
-.nav-right {
-  display: flex;
-  gap: 2rem;
-  margin-left: auto; /* pushes right group right */
-}
-
-/* Name centered absolutely */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  font-size: x-large;
-  white-space: nowrap;
-}
-
-
+    .custom-toggler-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .custom-toggler-icon span {
+      height: 4px;
+      background-color: red;
+    }
+    button.navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    .dropdown-menu {
+        border-radius: 0px;
+    }
 </style>
 
 
@@ -129,64 +111,44 @@
 <body>
     
     <div class="container">
-        <nav>
-            <div class="nav-left">
-              <a href="/portfolio/art">ART</a>
-              <a href="/portfolio/fashion">FASHION</a>
-            </div>
+        <nav class="navbar navbar-light bg-white justify-content-between">
+            <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
           
-            <div class="nav-center">
-              <a href="/portfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
-            </div>
+            <div class="dropdown">
+              <button id="dropdownMenuButton" class="navbar-toggler" type="button" style="border-width: 0;">
+                <span class="custom-toggler-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
           
-            <div class="nav-right">
-              <a href="/portfolio/misc">FEATURES</a>
-              <a href="/portfolio/contact">CONTACT</a>
+              <!-- ✅ Basic dropdown -->
+              <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+                <a class="dropdown-item" href="/portfolio/art">ART</a>
+                <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
+                <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
+              </div>
             </div>
           </nav>
           
-          
-          
-        <div class="row">
-            <div class="col-md-12 col-sm-12" id="logo">
-            </div>
-        </div>
-    </div>
-    <div class="container align-items-center">
+    <div class="align-items-center">
         
 <style>
     #logo-image {
         height: 60px;
         padding-top: 5px !important;
     }
-    .secondary-header {
-        font-family: 'Oswald', sans-serif;
-        font: bold;
-        font-size: 25px;
-    }
     .post-container {
-        max-width: 800px;
         margin: 0 auto;
         padding: 20px 20px;
         text-align: left;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .featured-img img {
         width: 100%;
         max-height: 600px;
         object-fit: cover;
         margin-bottom: 10px;
-    }
-    .post-title {
-        font-size: 40px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
-    .post-date {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        font-weight: lighter;
     }
     .post-caption {
         font-style: italic;
@@ -212,7 +174,6 @@
     padding: 0;
     cursor: pointer;
     }
-
     #back-button:focus {
         outline: none;
     }
@@ -223,35 +184,46 @@
 }
 </style>
 
-<div class="container text-center" id="smaller">
-    <a class = "secondary-header" href="https://vasilisaai.github.io/portfolio/misc/" style="text-decoration: none; color: inherit; font-weight: bold;">MORE FROM ME</a>
-</div>
-<hr> 
+<div class="container" style=" text-align: left;">
+    <h1 class="underline medium-text"><a href="https://vasilisaai.github.io/portfolio/misc/"  style="color: #000;">More From Me</a><h1>
+    <hr style="background-color: #000;">
+    <div class="container" style=" text-align: left;">
+        
+        
+            <div class="default-text" style="margin-bottom: 10px;">07.03.24</div>
+            <div class="medium-text">This Italian Expat in London is Raising the Bar for Martinis to Extraordinary Heights</div>
 
-<div class = "all" style="align-items: center; justify-content: center; justify-items: center;">
-    <div class="post-title" id="underline">This Italian Expat in London is Raising the Bar for Martinis to Extraordinary Heights
-        
-        
-        <div class="post-date" >07.03.24</div>
-    </div>
-
-    <div class="post-container">
-        <div class="featured-img">
-            <img src="../../../uploads/img/070324.jpg" alt="Post Image">
-        </div>
-        <div class="post-caption">The Connaught Hotel’s Agostino Perrone, left, with Giorgio Bargiani. Photo: Courtesy Phaidon</div>
-    
-    
-    
-        
-    
-        <div class="post-body"><p>When it comes to martinis, there’s one man who arguably serves one of the best in the world: the highly decorated bartender Agostino Perrone, who leads the bar at the five-star <a href="https://www.the-connaught.co.uk/">Connaught</a> hotel in London’s tony Mayfair district. Under his watchful eye, the bar has taken first prize in the World’s 50 Best Bars list and won nearly every award in the industry besides. Hailing from Lake Como, where he first cut his teeth bartending to get by as a student, Perrone has made a name for himself mixing drinks ever since he arrived in London 20 years ago. Together with Giorgio Bargiani, who joined the Connaught in 2014 and this year was named international bartender of the year by industry authority Tales of the Cocktail, the two mixologist maestros have rewritten the rules of the traditional hotel bar. “We were the very first bar in the traditional establishment to inject creativity, yet respecting the style of service and attention to details,” says Perrone. “We wanted to bring those things together. After we did this, so many others opened with the same aim of trying to be classy but also innovative.”</p>
+        <div class="post-container">
+            <br>
+            <div class="featured-img">
+                <img src="../../../uploads/img/070324.jpg" alt="Post Image">
+            </div>
+            <div class="small-text" style="font-style: italic;">The Connaught Hotel’s Agostino Perrone, left, with Giorgio Bargiani. Photo: Courtesy Phaidon</div>
+            <br>
+            
+            <div class="post-body" style="font-size: 20px; line-height: 24px;"><p>When it comes to martinis, there’s one man who arguably serves one of the best in the world: the highly decorated bartender Agostino Perrone, who leads the bar at the five-star <a href="https://www.the-connaught.co.uk/">Connaught</a> hotel in London’s tony Mayfair district. Under his watchful eye, the bar has taken first prize in the World’s 50 Best Bars list and won nearly every award in the industry besides. Hailing from Lake Como, where he first cut his teeth bartending to get by as a student, Perrone has made a name for himself mixing drinks ever since he arrived in London 20 years ago. Together with Giorgio Bargiani, who joined the Connaught in 2014 and this year was named international bartender of the year by industry authority Tales of the Cocktail, the two mixologist maestros have rewritten the rules of the traditional hotel bar. “We were the very first bar in the traditional establishment to inject creativity, yet respecting the style of service and attention to details,” says Perrone. “We wanted to bring those things together. After we did this, so many others opened with the same aim of trying to be classy but also innovative.”</p>
 <p>Sometimes coming up with 10 new drinks a month for a constantly rotating menu, they have successfully married the creativity of a cocktail bar with meticulous hospitality and a bit of Italian warmth. The recently opened Red Room, an attractive wine lounge, is a more living-room-like counterpart in which to enjoy the world’s finest wines. Take it from Perrone and Bargiani, then, how to assemble the perfect cocktail. Their new book, <a href="https://www.phaidon.com/store/cookbooks-food-and-drink/the-connaught-bar-cocktail-recipes-and-iconic-creations-9781838668105/"><em>The Connaught Bar: Recipes and Iconic Creations</em></a>(Phaidon), shares a hundred of their coveted recipes for a DIY world-class cocktail from home.</p>
 <p>In the industry of dining and drinking, Perrone and Bargiani’s North Star is their ethos of hospitality. The goal is to be memorable—“not because we had sparkles in our cocktail, but because you felt good, you felt special,” says Perrone. This motto is reflected in their drinks. Their signature martini, for example, is prepared typically by Perrone himself on a trolley in front of the guest, who gets to pick from a selection of bitters. “We give people time,” says Bargiani. “Nobody has time in this city, but we always find time to explain our martini and put the guest as the protagonist of it.”</p>
 <p>By revealing the recipes for their iconic creations in a book, Perrone and Bargiani hope that others get to know the art behind cocktail preparation. The directions for this aromatized martini are outlined in the book, as well as twists on classics (the Bloody Mary is finished with “celery air”), eccentricities (the Ellipsis features milk punch and kombucha), and more labor-intensive recipes (the tomato-skin-infused Japanese gin requires 24 hours to prepare for Give It the Green Light). Perrone outlines the inspiration that led to each invention, which ranges from the Mediterranean sun and Goodfellas to Bentley automobiles and bumblebees. “It’s not a geeky bartender book,” Perrone promises; there’s something for the curious bartender, mere cocktail lover, or fan of beautiful coffee-table books. Their last bit of advice? To judge a good bar, check the ice. “When you see the ice is not good quality,” says Perrone, “just go for champagne or maybe a good craft beer.”</p></div>
+        </div>
+</div>
+
     </div>
 </div>
 
+<script>
+    $('#dropdownMenuButton').on('click', function () {
+      $('#dropdownMenu').toggleClass('show');
+    });
+  
+    // Optional: Close dropdown when clicking outside
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('#dropdownMenuButton').length) {
+        $('#dropdownMenu').removeClass('show');
+      }
+    });
+  </script>
+  
 
 </body>
 

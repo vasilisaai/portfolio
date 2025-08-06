@@ -46,6 +46,10 @@
         color: black;
         text-decoration: none; /* Underline links */
     }
+    .medium-text {
+        font-size: xx-large;
+        color: black;
+    }
     .default-text {
         font-size: x-large;
         color: black;
@@ -56,19 +60,8 @@
         text-decoration: none; /* Underline links */
     }
     .small-text {
-        font-size: small;
+        font-size: medium;
         color: black;
-    }
-    .default-text a {
-        font-size: x-large;
-        color: black;
-        text-decoration: none; /* Underline links */
-    }
-    /* FOR POSTS */
-    h1 {
-        padding-top: 0;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
     }
     a {
         color: black;
@@ -80,48 +73,37 @@
     #underline_hover_red a:hover {
         color: red;
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
     #underline_hover a:hover {
         color: red;
         text-decoration: underline;
         text-decoration-thickness: 1px;
+        text-underline-offset: 3px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
-    nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-}
-
-/* Left group hugs the center, pushes to left side */
-.nav-left {
-  display: flex;
-  gap: 2rem;
-  align-items: right;
-}
-
-/* Right group hugs the center, pushes to right side */
-.nav-right {
-  display: flex;
-  gap: 2rem;
-  margin-left: auto; /* pushes right group right */
-}
-
-/* Name centered absolutely */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  font-size: x-large;
-  white-space: nowrap;
-}
-
-
+    .custom-toggler-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .custom-toggler-icon span {
+      height: 4px;
+      background-color: red;
+    }
+    button.navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    .dropdown-menu {
+        border-radius: 0px;
+    }
 </style>
 
 
@@ -129,64 +111,44 @@
 <body>
     
     <div class="container">
-        <nav>
-            <div class="nav-left">
-              <a href="/portfolio/art">ART</a>
-              <a href="/portfolio/fashion">FASHION</a>
-            </div>
+        <nav class="navbar navbar-light bg-white justify-content-between">
+            <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
           
-            <div class="nav-center">
-              <a href="/portfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
-            </div>
+            <div class="dropdown">
+              <button id="dropdownMenuButton" class="navbar-toggler" type="button" style="border-width: 0;">
+                <span class="custom-toggler-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
           
-            <div class="nav-right">
-              <a href="/portfolio/misc">FEATURES</a>
-              <a href="/portfolio/contact">CONTACT</a>
+              <!-- ✅ Basic dropdown -->
+              <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+                <a class="dropdown-item" href="/portfolio/art">ART</a>
+                <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
+                <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
+              </div>
             </div>
           </nav>
           
-          
-          
-        <div class="row">
-            <div class="col-md-12 col-sm-12" id="logo">
-            </div>
-        </div>
-    </div>
-    <div class="container align-items-center">
+    <div class="align-items-center">
         
 <style>
     #logo-image {
         height: 60px;
         padding-top: 5px !important;
     }
-    .secondary-header {
-        font-family: 'Oswald', sans-serif;
-        font: bold;
-        font-size: 25px;
-    }
     .post-container {
-        max-width: 800px;
         margin: 0 auto;
         padding: 20px 20px;
         text-align: left;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .featured-img img {
         width: 100%;
         max-height: 600px;
         object-fit: cover;
         margin-bottom: 10px;
-    }
-    .post-title {
-        font-size: 40px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
-    .post-date {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        font-weight: lighter;
     }
     .post-caption {
         font-style: italic;
@@ -212,7 +174,6 @@
     padding: 0;
     cursor: pointer;
     }
-
     #back-button:focus {
         outline: none;
     }
@@ -223,37 +184,48 @@
 }
 </style>
 
-<div class="container text-center" id="smaller">
-    <a class = "secondary-header" href="https://vasilisaai.github.io/portfolio/art/" style="text-decoration: none; color: inherit; font-weight: bold;">ART LISTINGS</a>
-</div>
-<hr> 
+<div class="container" style=" text-align: left;">
+    <h1 class="underline medium-text"><a href="https://vasilisaai.github.io/portfolio/art/"  style="color: #000;">Art Listings</a><h1>
+    <hr style="background-color: #000;">
+    <div class="container" style=" text-align: left;">
+        
+        
+            <div class="default-text" style="margin-bottom: 10px;">07.07.24</div>
+            <div class="medium-text">A Triad of Brilliance Lands in London; An Rising American Painter Takes a Bow; and Inside the Artistry of Cold, Hard Cash</div>
 
-<div class = "all" style="align-items: center; justify-content: center; justify-items: center;">
-    <div class="post-title" id="underline">A Triad of Brilliance Lands in London; An Rising American Painter Takes a Bow; and Inside the Artistry of Cold, Hard Cash
-        
-        
-        <div class="post-date" >07.07.24</div>
-    </div>
-
-    <div class="post-container">
-        <div class="featured-img">
-            <img src="../../../uploads/img/070724.jpg" alt="Post Image">
-        </div>
-        <div class="post-caption">“David Hockney, 5 July 1977,” by Bern Schwartz. Photo: Courtesy National Portrait Gallery, London</div>
-    
-    
-    
-        
-    
-        <div class="post-body"><p><strong>London, “Hockney and Piero: A Longer Look” (Opens Aug. 8)</strong><br />
+        <div class="post-container">
+            <br>
+            <div class="featured-img">
+                <img src="../../../uploads/img/070724.jpg" alt="Post Image">
+            </div>
+            <div class="small-text" style="font-style: italic;">“David Hockney, 5 July 1977,” by Bern Schwartz. Photo: Courtesy National Portrait Gallery, London</div>
+            <br>
+            
+            <div class="post-body" style="font-size: 20px; line-height: 24px;"><p><strong>London, “Hockney and Piero: A Longer Look” (Opens Aug. 8)</strong><br />
  Consisting of three paintings, this exhibition by the National Gallery is modest, but not from want of more. To its director, in 1979, the English painter David Hockney wrote, “I must tell you that I love the collection of the National Gallery.” It’s where he saw Renaissance painter Piero della Francesca’s “The Baptism of Christ” for the first time, a painting he loved so much he faithfully reproduced it in the background of two portraits. With the Hockneys flanking the original 15th-century painting, this triad is an invitation to practice the art of looking long and hard at what’s before you, without distractions. <a href="https://nationalgallery.org.uk/exhibitions/hockney-and-piero-a-longer-look"><em>nationalgallery.org.uk</em></a></p>
 <p><strong>Minneapolis, “Walter Price: Pearl Lines” (Opens Aug. 8)</strong><br />
  This is a first for American painter Walter Price, who has shown worldwide—including solo at MoMA PS1 and Camden Art Centre, and in the 2019 Whitney Biennial—but never had a solo exhibition this comprehensive. He grew up in Georgia in the 1990s and, having always known he wanted to paint, served in the navy so that he could attend art school through the GI Bill. Known for their recurring motifs, his lush paintings dance between abstraction and figuration. Often they feature Black figures, patterns of stars, or domestic symbols, though sometimes they are purely abstract. With upward of 20 paintings produced from 2017 to today, including a few on show for the first time, this presentation follows the trajectory of the growing star’s career. <a href="https://walkerart.org/calendar/2024/walter-price-pearl-lines"><em>walkerart.org</em></a></p>
 <p><strong>Oxford, “Money Talks: Art, Society &amp; Power” (Opens Aug. 9)</strong><br />
  Money, taboo in conversation and all-pervasive in life, is so ubiquitous that it’s rarely seen for what it is—a work of art itself. But the tradition of decorating bills and coins with portraits dates back centuries and is often a painstaking feat that has involved sculptors, engravers, designers, painters, and photographers to accomplish. Presenting money that is art (like 20th-century bills designed by Viennese artists Gustav Klimt and Koloman Moser), and art that is money (like contemporary work featuring the dollar bill by Andy Warhol, Guerilla Girls, and Banksy), this exhibition examines the art of cash and the complicated emotions that come with it. <a href="https://www.ashmolean.org/exhibition/money-talks-art-power-and-society"><em>ashmolean.org</em></a></p></div>
+        </div>
+</div>
+
     </div>
 </div>
 
+<script>
+    $('#dropdownMenuButton').on('click', function () {
+      $('#dropdownMenu').toggleClass('show');
+    });
+  
+    // Optional: Close dropdown when clicking outside
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('#dropdownMenuButton').length) {
+        $('#dropdownMenu').removeClass('show');
+      }
+    });
+  </script>
+  
 
 </body>
 

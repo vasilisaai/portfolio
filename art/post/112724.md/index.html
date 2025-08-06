@@ -46,6 +46,10 @@
         color: black;
         text-decoration: none; /* Underline links */
     }
+    .medium-text {
+        font-size: xx-large;
+        color: black;
+    }
     .default-text {
         font-size: x-large;
         color: black;
@@ -56,19 +60,8 @@
         text-decoration: none; /* Underline links */
     }
     .small-text {
-        font-size: small;
+        font-size: medium;
         color: black;
-    }
-    .default-text a {
-        font-size: x-large;
-        color: black;
-        text-decoration: none; /* Underline links */
-    }
-    /* FOR POSTS */
-    h1 {
-        padding-top: 0;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
     }
     a {
         color: black;
@@ -80,48 +73,37 @@
     #underline_hover_red a:hover {
         color: red;
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
     #underline_hover a:hover {
         color: red;
         text-decoration: underline;
         text-decoration-thickness: 1px;
+        text-underline-offset: 3px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
-    nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-}
-
-/* Left group hugs the center, pushes to left side */
-.nav-left {
-  display: flex;
-  gap: 2rem;
-  align-items: right;
-}
-
-/* Right group hugs the center, pushes to right side */
-.nav-right {
-  display: flex;
-  gap: 2rem;
-  margin-left: auto; /* pushes right group right */
-}
-
-/* Name centered absolutely */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  font-size: x-large;
-  white-space: nowrap;
-}
-
-
+    .custom-toggler-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .custom-toggler-icon span {
+      height: 4px;
+      background-color: red;
+    }
+    button.navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    .dropdown-menu {
+        border-radius: 0px;
+    }
 </style>
 
 
@@ -129,64 +111,44 @@
 <body>
     
     <div class="container">
-        <nav>
-            <div class="nav-left">
-              <a href="/portfolio/art">ART</a>
-              <a href="/portfolio/fashion">FASHION</a>
-            </div>
+        <nav class="navbar navbar-light bg-white justify-content-between">
+            <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
           
-            <div class="nav-center">
-              <a href="/portfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
-            </div>
+            <div class="dropdown">
+              <button id="dropdownMenuButton" class="navbar-toggler" type="button" style="border-width: 0;">
+                <span class="custom-toggler-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
           
-            <div class="nav-right">
-              <a href="/portfolio/misc">FEATURES</a>
-              <a href="/portfolio/contact">CONTACT</a>
+              <!-- ✅ Basic dropdown -->
+              <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+                <a class="dropdown-item" href="/portfolio/art">ART</a>
+                <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
+                <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
+              </div>
             </div>
           </nav>
           
-          
-          
-        <div class="row">
-            <div class="col-md-12 col-sm-12" id="logo">
-            </div>
-        </div>
-    </div>
-    <div class="container align-items-center">
+    <div class="align-items-center">
         
 <style>
     #logo-image {
         height: 60px;
         padding-top: 5px !important;
     }
-    .secondary-header {
-        font-family: 'Oswald', sans-serif;
-        font: bold;
-        font-size: 25px;
-    }
     .post-container {
-        max-width: 800px;
         margin: 0 auto;
         padding: 20px 20px;
         text-align: left;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .featured-img img {
         width: 100%;
         max-height: 600px;
         object-fit: cover;
         margin-bottom: 10px;
-    }
-    .post-title {
-        font-size: 40px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
-    .post-date {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        font-weight: lighter;
     }
     .post-caption {
         font-style: italic;
@@ -212,7 +174,6 @@
     padding: 0;
     cursor: pointer;
     }
-
     #back-button:focus {
         outline: none;
     }
@@ -223,29 +184,24 @@
 }
 </style>
 
-<div class="container text-center" id="smaller">
-    <a class = "secondary-header" href="https://vasilisaai.github.io/portfolio/art/" style="text-decoration: none; color: inherit; font-weight: bold;">ART LISTINGS</a>
-</div>
-<hr> 
+<div class="container" style=" text-align: left;">
+    <h1 class="underline medium-text"><a href="https://vasilisaai.github.io/portfolio/art/"  style="color: #000;">Art Listings</a><h1>
+    <hr style="background-color: #000;">
+    <div class="container" style=" text-align: left;">
+        
+        
+            <div class="default-text" style="margin-bottom: 10px;">11.27.24</div>
+            <div class="medium-text">Surrealist Furniture; Snapshots of Britain in the ’80s; and a Friendship That Broke Artistic Convention</div>
 
-<div class = "all" style="align-items: center; justify-content: center; justify-items: center;">
-    <div class="post-title" id="underline">Surrealist Furniture; Snapshots of Britain in the ’80s; and a Friendship That Broke Artistic Convention
-        
-        
-        <div class="post-date" >11.27.24</div>
-    </div>
-
-    <div class="post-container">
-        <div class="featured-img">
-            <img src="../../../uploads/img/112724.jpg" alt="Post Image">
-        </div>
-        <div class="post-caption">Body Builder in Bra by British photographer Ajamu, 1990. Photo: Courtesy Tate</div>
-    
-    
-    
-        
-    
-        <div class="post-body"><p><strong>Detroit, “Chris Schanck: A Surreality” (Until Feb. 23)</strong><br />
+        <div class="post-container">
+            <br>
+            <div class="featured-img">
+                <img src="../../../uploads/img/112724.jpg" alt="Post Image">
+            </div>
+            <div class="small-text" style="font-style: italic;">Body Builder in Bra by British photographer Ajamu, 1990. Photo: Courtesy Tate</div>
+            <br>
+            
+            <div class="post-body" style="font-size: 20px; line-height: 24px;"><p><strong>Detroit, “Chris Schanck: A Surreality” (Until Feb. 23)</strong><br />
  Chris Schanck’s sculptural furniture objects look like they might begin bubbling, fizzing, and multiplying. The designer’s favorite technique sees mundane things like plywood pasted with tinfoil and coated in resin to get this warped, dreamlike effect. In his latest creations, he unleashes his imagination on coffee tables, mirrors, tables, and chairs, until they are unrecognizable. In his hometown of Detroit, this exhibition places Schanck and his fantastical creations at the forefront of the 100-year-old surrealist genre. <a href="https://mocadetroit.org/chris-schanck-a-surreality/"><em>mocadetroit.org</em></a></p>
 <p><strong>London, “Lenore Tawney &amp; Toshiko Takaezu: A Remarkable Friendship” (Until Dec. 21)</strong><br />
  The lifelong friendship between two unprecedented women, weaver Lenore Tawney and ceramist Toshiko Takaezu, began in 1957 when they became acquainted at an American Craft conference in California. Tawney was 50 and Takaezu was 35, but they shared an unorthodoxy in their practice, elevating their respective crafts to the status of fine art. They showed their work in joint exhibitions, traveled together, and greatly influenced one another in work and life. For some years, Tawney had an adjoining studio to Takaezu’s home in Quakertown, New Jersey. Reuniting their work again, and bringing Takaezu’s ceramics to the UK for the first time, this exhibition is a testament to their fruitful friendship and the shared sensibilities between their yarn and clay. <a href="https://alisonjacques.com/exhibitions/lenore-tawney-toshiko-takaezua-remarkable-friendship"><em>alisonjacques.com</em></a></p>
@@ -255,9 +211,25 @@
  Fame gets old. As a society, we tend to get bored as soon as something hits peak popularity. The Brooklyn Museum forgoes that attitude to celebrate history’s most obviously sought-after, powerful, and beautiful metal: gold. The ambitious exhibition showcases the use of gold across civilizations and time, from ancient Egypt to contemporary hip-hop culture. A few standouts in the exhaustive 500 works are an ancient Greek laurel wreath (one of the four surviving from the 3rd century B.C.), elegant Japanese screens, and fashion from the likes of Christian Dior and The Blonds. <a href="https://www.brooklynmuseum.org/exhibitions/solid-gold?gad_source=1&amp;gclid=CjwKCAiA9IC6BhA3EiwAsbltOJmwtP05qGzFoClnko6GXR31g3Rdaaht7AnFsW1js7YO8Vn5bnBUORoCwBUQAvD_BwE&amp;gclsrc=aw.ds"><em>brooklynmuseum.org</em></a></p>
 <p><strong>Providence, “The Art of French Wallpaper Design” (Until May 11)</strong><br />
  In the mid-1800s, French companies were supplying the aristocracy with gorgeous and incredibly expensive wallpaper. In fact, the first riot of the French Revolution attacked and set fire to industry giant Jean-Baptiste Réveillon’s wallpaper factory. But as the delicate florals and patterns faded and were pasted over, this piece of French and design history has largely been forgotten. With 100 preserved 18th- and 19th-century French wallpapers, borders, and sketches, this exhibition is a testament to the exquisite art of blockprinted, maximalist wallpapers. <a href="https://risdmuseum.org/exhibitions-events/exhibitions/art-french-wallpaper-design"><em>risdmuseum.org</em></a> —<em>Vasilisa Ioukhnovets</em></p></div>
+        </div>
+</div>
+
     </div>
 </div>
 
+<script>
+    $('#dropdownMenuButton').on('click', function () {
+      $('#dropdownMenu').toggleClass('show');
+    });
+  
+    // Optional: Close dropdown when clicking outside
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('#dropdownMenuButton').length) {
+        $('#dropdownMenu').removeClass('show');
+      }
+    });
+  </script>
+  
 
 </body>
 

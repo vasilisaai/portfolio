@@ -46,6 +46,10 @@
         color: black;
         text-decoration: none; /* Underline links */
     }
+    .medium-text {
+        font-size: xx-large;
+        color: black;
+    }
     .default-text {
         font-size: x-large;
         color: black;
@@ -56,19 +60,8 @@
         text-decoration: none; /* Underline links */
     }
     .small-text {
-        font-size: small;
+        font-size: medium;
         color: black;
-    }
-    .default-text a {
-        font-size: x-large;
-        color: black;
-        text-decoration: none; /* Underline links */
-    }
-    /* FOR POSTS */
-    h1 {
-        padding-top: 0;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
     }
     a {
         color: black;
@@ -80,48 +73,37 @@
     #underline_hover_red a:hover {
         color: red;
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
     #underline_hover a:hover {
         color: red;
         text-decoration: underline;
         text-decoration-thickness: 1px;
+        text-underline-offset: 3px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
-    nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-}
-
-/* Left group hugs the center, pushes to left side */
-.nav-left {
-  display: flex;
-  gap: 2rem;
-  align-items: right;
-}
-
-/* Right group hugs the center, pushes to right side */
-.nav-right {
-  display: flex;
-  gap: 2rem;
-  margin-left: auto; /* pushes right group right */
-}
-
-/* Name centered absolutely */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  font-size: x-large;
-  white-space: nowrap;
-}
-
-
+    .custom-toggler-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .custom-toggler-icon span {
+      height: 4px;
+      background-color: red;
+    }
+    button.navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    .dropdown-menu {
+        border-radius: 0px;
+    }
 </style>
 
 
@@ -129,64 +111,44 @@
 <body>
     
     <div class="container">
-        <nav>
-            <div class="nav-left">
-              <a href="/portfolio/art">ART</a>
-              <a href="/portfolio/fashion">FASHION</a>
-            </div>
+        <nav class="navbar navbar-light bg-white justify-content-between">
+            <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
           
-            <div class="nav-center">
-              <a href="/portfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
-            </div>
+            <div class="dropdown">
+              <button id="dropdownMenuButton" class="navbar-toggler" type="button" style="border-width: 0;">
+                <span class="custom-toggler-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
           
-            <div class="nav-right">
-              <a href="/portfolio/misc">FEATURES</a>
-              <a href="/portfolio/contact">CONTACT</a>
+              <!-- ✅ Basic dropdown -->
+              <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+                <a class="dropdown-item" href="/portfolio/art">ART</a>
+                <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
+                <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
+              </div>
             </div>
           </nav>
           
-          
-          
-        <div class="row">
-            <div class="col-md-12 col-sm-12" id="logo">
-            </div>
-        </div>
-    </div>
-    <div class="container align-items-center">
+    <div class="align-items-center">
         
 <style>
     #logo-image {
         height: 60px;
         padding-top: 5px !important;
     }
-    .secondary-header {
-        font-family: 'Oswald', sans-serif;
-        font: bold;
-        font-size: 25px;
-    }
     .post-container {
-        max-width: 800px;
         margin: 0 auto;
         padding: 20px 20px;
         text-align: left;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .featured-img img {
         width: 100%;
         max-height: 600px;
         object-fit: cover;
         margin-bottom: 10px;
-    }
-    .post-title {
-        font-size: 40px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
-    .post-date {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        font-weight: lighter;
     }
     .post-caption {
         font-style: italic;
@@ -212,7 +174,6 @@
     padding: 0;
     cursor: pointer;
     }
-
     #back-button:focus {
         outline: none;
     }
@@ -223,29 +184,24 @@
 }
 </style>
 
-<div class="container text-center" id="smaller">
-    <a class = "secondary-header" href="https://vasilisaai.github.io/portfolio/art/" style="text-decoration: none; color: inherit; font-weight: bold;">ART LISTINGS</a>
-</div>
-<hr> 
+<div class="container" style=" text-align: left;">
+    <h1 class="underline medium-text"><a href="https://vasilisaai.github.io/portfolio/art/"  style="color: #000;">Art Listings</a><h1>
+    <hr style="background-color: #000;">
+    <div class="container" style=" text-align: left;">
+        
+        
+            <div class="default-text" style="margin-bottom: 10px;">03.05.25</div>
+            <div class="medium-text">Anselm Kiefer’s Monumental Show; a Cuban Painter Forges a New Path; and More Openings Around the Globe</div>
 
-<div class = "all" style="align-items: center; justify-content: center; justify-items: center;">
-    <div class="post-title" id="underline">Anselm Kiefer’s Monumental Show; a Cuban Painter Forges a New Path; and More Openings Around the Globe
-        
-        
-        <div class="post-date" >03.05.25</div>
-    </div>
-
-    <div class="post-container">
-        <div class="featured-img">
-            <img src="../../../uploads/img/030525.jpg" alt="Post Image">
-        </div>
-        <div class="post-caption">A helicopter upside down by Paola Pivi. Photo: Attilio Maranzano, courtesy San Carlo Cremona</div>
-    
-    
-    
-        
-    
-        <div class="post-body"><p><strong>Cremona, “Paola Pivi: A Helicopter Upside Down” (Until June)</strong><br />
+        <div class="post-container">
+            <br>
+            <div class="featured-img">
+                <img src="../../../uploads/img/030525.jpg" alt="Post Image">
+            </div>
+            <div class="small-text" style="font-style: italic;">A helicopter upside down by Paola Pivi. Photo: Attilio Maranzano, courtesy San Carlo Cremona</div>
+            <br>
+            
+            <div class="post-body" style="font-size: 20px; line-height: 24px;"><p><strong>Cremona, “Paola Pivi: A Helicopter Upside Down” (Until June)</strong><br />
  In the central nave of a 400-year-old church in northern Italy, Italian artist Paola Pivi has installed a helicopter belly-up, like an upside-down turtle. It’s a decidedly jarring sight. This is not Pivi’s first strange but delightful sculpture. Her first exhibition, in 1997, was a huge 18-wheeler flipped on its side. This show is only the latest in her unexpected visual concoctions: At the 1999 Venice Biennale, she presented an upside-down fighter jet. She’s covered polar bear sculptures in neon plumes and has brought horses to the Eiffel Tower. More recently, in 2022, New York’s High Line saw a small replica of the Statue of Liberty wearing a cartoonish mask. <a href="https://www.sancarlocremona.com/en-index.php"><em>sancarlocremona.com</em></a></p>
 <p><strong>Amsterdam, “Anselm Kiefer: Sag Mir Wo Die Blumen Sind” (Opens March 7)</strong><br />
  Over five decades, German artist Anselm Kiefer has unflinchingly confronted Germany’s painful history in a varied oeuvre of provocative, melancholy, and sometimes deeply dark monumental sculptures and paintings thickly slathered in paint. Often, encrusted layers of straw, ash, and clay imbue his work with both gravity and fragility. A massive exhibition spanning two of Amsterdam’s institutions celebrates the artist’s 80th birthday this year: The Van Gogh Museum examines his Dutch influence, while the Stedelijk, one of the first museums to purchase Kiefer’s work, brings out all the Kiefers in their collection. <a href="https://www.vangoghmuseum.nl/en/visit/whats-on/exhibitions/anselm-kiefer-sag-mir-wo-die-blumen-sind"><em>vangoghmuseum.nl</em></a></p>
@@ -255,9 +211,25 @@
  American photographer James Welling first saw Bernd and Hilla Becher’s photographs at the 1970 MoMA exhibition “Information.” The husband and wife photographers had been carefully documenting Germany’s disappearing industrial landscape since the ’60s. Welling, taken by their dedication, later compared the Bechers to bird-watchers in their obsession with variations of water towers, furnaces, and gas tanks. He began to make photographs in 1976, which largely consisted of local architecture. In a 1988 series, he chronicled railroads throughout North America. This show places Welling’s photographs of Marcel Breur’s Brutalist architecture in conversation with the Bechers’ renowned work. <a href="https://www.maureenpaley.com/exhibitions/james-welling-and-bernd-hilla-becher/press-release"><em>maureenpaley.com</em></a></p>
 <p><strong>New York, “Dorothy Hood: Remember Something Out of Time” (Until April 12)</strong><br />
  While Dorothy Hood is considered by some as one of Texas’s greatest 20th-century painters, she never quite became a household name in her lifetime. The ambitious Texan began her artistic career in Mexico after a short vacation there in the ’40s turned into two decades. There, she found herself at the forefront of Mexico City’s creative community, including exiled European intellectuals and artists like Frida Kahlo, Sophie Treadwell, and Luis Buñuel. She would experiment with different styles (her first exhibit in Mexico consisted of portraits) before settling on abstraction. “Landscapes of my psyche,” she said of her work. This is Hood’s first solo exhibition in New York since the 1980s (she died in 2000), showcasing eight of her paintings, along with drawings and collages. <a href="https://www.hollistaggart.com/exhibitions/209-dorothy-hood-remember-something-out-of-time/"><em>hollistaggart.com</em></a></p></div>
+        </div>
+</div>
+
     </div>
 </div>
 
+<script>
+    $('#dropdownMenuButton').on('click', function () {
+      $('#dropdownMenu').toggleClass('show');
+    });
+  
+    // Optional: Close dropdown when clicking outside
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('#dropdownMenuButton').length) {
+        $('#dropdownMenu').removeClass('show');
+      }
+    });
+  </script>
+  
 
 </body>
 

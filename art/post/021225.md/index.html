@@ -46,6 +46,10 @@
         color: black;
         text-decoration: none; /* Underline links */
     }
+    .medium-text {
+        font-size: xx-large;
+        color: black;
+    }
     .default-text {
         font-size: x-large;
         color: black;
@@ -56,19 +60,8 @@
         text-decoration: none; /* Underline links */
     }
     .small-text {
-        font-size: small;
+        font-size: medium;
         color: black;
-    }
-    .default-text a {
-        font-size: x-large;
-        color: black;
-        text-decoration: none; /* Underline links */
-    }
-    /* FOR POSTS */
-    h1 {
-        padding-top: 0;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
     }
     a {
         color: black;
@@ -80,48 +73,37 @@
     #underline_hover_red a:hover {
         color: red;
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
     #underline_hover a:hover {
         color: red;
         text-decoration: underline;
         text-decoration-thickness: 1px;
+        text-underline-offset: 3px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
-    nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-}
-
-/* Left group hugs the center, pushes to left side */
-.nav-left {
-  display: flex;
-  gap: 2rem;
-  align-items: right;
-}
-
-/* Right group hugs the center, pushes to right side */
-.nav-right {
-  display: flex;
-  gap: 2rem;
-  margin-left: auto; /* pushes right group right */
-}
-
-/* Name centered absolutely */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  font-size: x-large;
-  white-space: nowrap;
-}
-
-
+    .custom-toggler-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .custom-toggler-icon span {
+      height: 4px;
+      background-color: red;
+    }
+    button.navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    .dropdown-menu {
+        border-radius: 0px;
+    }
 </style>
 
 
@@ -129,64 +111,44 @@
 <body>
     
     <div class="container">
-        <nav>
-            <div class="nav-left">
-              <a href="/portfolio/art">ART</a>
-              <a href="/portfolio/fashion">FASHION</a>
-            </div>
+        <nav class="navbar navbar-light bg-white justify-content-between">
+            <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
           
-            <div class="nav-center">
-              <a href="/portfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
-            </div>
+            <div class="dropdown">
+              <button id="dropdownMenuButton" class="navbar-toggler" type="button" style="border-width: 0;">
+                <span class="custom-toggler-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
           
-            <div class="nav-right">
-              <a href="/portfolio/misc">FEATURES</a>
-              <a href="/portfolio/contact">CONTACT</a>
+              <!-- ✅ Basic dropdown -->
+              <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+                <a class="dropdown-item" href="/portfolio/art">ART</a>
+                <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
+                <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
+              </div>
             </div>
           </nav>
           
-          
-          
-        <div class="row">
-            <div class="col-md-12 col-sm-12" id="logo">
-            </div>
-        </div>
-    </div>
-    <div class="container align-items-center">
+    <div class="align-items-center">
         
 <style>
     #logo-image {
         height: 60px;
         padding-top: 5px !important;
     }
-    .secondary-header {
-        font-family: 'Oswald', sans-serif;
-        font: bold;
-        font-size: 25px;
-    }
     .post-container {
-        max-width: 800px;
         margin: 0 auto;
         padding: 20px 20px;
         text-align: left;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .featured-img img {
         width: 100%;
         max-height: 600px;
         object-fit: cover;
         margin-bottom: 10px;
-    }
-    .post-title {
-        font-size: 40px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
-    .post-date {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        font-weight: lighter;
     }
     .post-caption {
         font-style: italic;
@@ -212,7 +174,6 @@
     padding: 0;
     cursor: pointer;
     }
-
     #back-button:focus {
         outline: none;
     }
@@ -223,29 +184,24 @@
 }
 </style>
 
-<div class="container text-center" id="smaller">
-    <a class = "secondary-header" href="https://vasilisaai.github.io/portfolio/art/" style="text-decoration: none; color: inherit; font-weight: bold;">ART LISTINGS</a>
-</div>
-<hr> 
+<div class="container" style=" text-align: left;">
+    <h1 class="underline medium-text"><a href="https://vasilisaai.github.io/portfolio/art/"  style="color: #000;">Art Listings</a><h1>
+    <hr style="background-color: #000;">
+    <div class="container" style=" text-align: left;">
+        
+        
+            <div class="default-text" style="margin-bottom: 10px;">02.12.25</div>
+            <div class="medium-text">A Gallery Remembers a Daring Postmodern Talent</div>
 
-<div class = "all" style="align-items: center; justify-content: center; justify-items: center;">
-    <div class="post-title" id="underline">A Gallery Remembers a Daring Postmodern Talent
-        
-        
-        <div class="post-date" >02.12.25</div>
-    </div>
-
-    <div class="post-container">
-        <div class="featured-img">
-            <img src="../../../uploads/img/021225.jpg" alt="Post Image">
-        </div>
-        <div class="post-caption">Leda by Isamu Noguchi, 1928. Photo: Courtesy Blanton Museum of Art</div>
-    
-    
-    
-        
-    
-        <div class="post-body"><p><strong>New York, “Dan Friedman: Why Shouldn’t I Have Fun All Day?” (Until March 22)</strong><br />
+        <div class="post-container">
+            <br>
+            <div class="featured-img">
+                <img src="../../../uploads/img/021225.jpg" alt="Post Image">
+            </div>
+            <div class="small-text" style="font-style: italic;">Leda by Isamu Noguchi, 1928. Photo: Courtesy Blanton Museum of Art</div>
+            <br>
+            
+            <div class="post-body" style="font-size: 20px; line-height: 24px;"><p><strong>New York, “Dan Friedman: Why Shouldn’t I Have Fun All Day?” (Until March 22)</strong><br />
  In the late 1970s, Dan Friedman was a graphic designer living in Greenwich Village and working at the graphic design agency Pentagram, designing corporate posters, letterheads, and logos. He soon grew bored of the humorless work at his day job, which he found incongruent with the overflowing creativity and culture of downtown Manhattan. “I began to live a double life,” he says. “I realized I was having more fun working at night in this other world, this other side of New York City. I thought, ‘Why shouldn’t I have fun all day?’” He left his job and devoted the remainder of his life to making funky, DayGlo-covered objects, transforming his apartment into a goofy and neon wonderland. The objects on show for the first time here illustrate how Friedman wildly reimagined household objects. In honor of the 30th anniversary of his passing from AIDS complications, this show brings to life Friedman’s whimsical and vibrant way of seeing. <a href="https://www.superhouse.us/exhibitions/dan-friedman-why-shoudnt-i-have-fun-all-day"><em>superhouse.us</em></a></p>
 <p><strong>Atlanta, “Anonymous Fragments: Timothy Hull” (Opens Feb. 14)</strong> <br />
  In history museums, ancient artifacts sit alone in big rooms, divorced from their original lives—jewelry is unworn, tools can’t be touched, vases hold no flowers. Timothy Hull, a New York–based artist whose work plays with ancient Greek motifs, is not the first to point this out, but he brings a fresh perspective to the institutional critique. For this exhibition, Hull rejects the conventional, stale presentation of ancient Greek art. Taking inspiration from the collection of vase fragments at Emory University’s Carlos Museum, he constructs a queer art history in new drawings, paintings, and a 20-foot-long mural, highlighting the depiction of same-sex lovers and Dionysian revelry in antiquity. “I like to think that I’m tinkering around history,” says the artist. <a href="https://carlos.emory.edu/exhibition/Timothy-Hull"><em>carlos.emory.edu</em></a></p>
@@ -255,9 +211,25 @@
  Among the newcomers flocking to the artists colony in Provincetown, Massachusetts, after World War I was the painter and printmaker Blanche Lazzell. Lazzell was born in a small mining town in West Virginia in 1878, but her dreams were bigger than her birthplace. In her late 1930s, she left to study art in New York and Paris, an exception for women of her time. She brought European Modernism back with her when she came to Provincetown in 1915, making the style her own in more than 138 white-line woodblock prints over the next 40 years. The first monographic exhibition in nearly two decades features over 60 of her prints, paintings, and works on paper, bringing attention to her originality and influence on abstraction. <a href="https://brucemuseum.org/whats-on/blanche-lazzell-becoming-an-american-modernist/"><em>brucemuseum.org</em></a></p>
 <p><strong>Los Angeles, “Alice Coltrane: Monument Eternal” (Until May 4)</strong><br />
  When Alice Coltrane died in 2007, she left behind a diverse and genre-crossing musical oeuvre that reflected her life: vocals tinged with the Detroit gospel from her childhood; jazz improvisations performed with her husband, John Coltrane; and the Hindu bhajans she discovered later in life, when she became a spiritual leader by the name of Turiyasangitananda. Her influence was just as wide and far-reaching as her music and has seeped into broader culture. The title of this show comes from a 1977 text by Coltrane about her spiritual journey that was just reissued this month. This is the first museum exhibition dedicated to the musician and examines her legacy through her influence on contemporary visual art, with work by 19 artists like Martine Syms, Rashid Johnson, and Cauleen Smith. The artwork is complemented by video, sculpture, and handwritten sheet music from Coltrane’s archives. <a href="https://hammer.ucla.edu/exhibitions/2025/alice-coltrane-monument-eternal"><em>hammer.ucla.edu</em></a></p></div>
+        </div>
+</div>
+
     </div>
 </div>
 
+<script>
+    $('#dropdownMenuButton').on('click', function () {
+      $('#dropdownMenu').toggleClass('show');
+    });
+  
+    // Optional: Close dropdown when clicking outside
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('#dropdownMenuButton').length) {
+        $('#dropdownMenu').removeClass('show');
+      }
+    });
+  </script>
+  
 
 </body>
 

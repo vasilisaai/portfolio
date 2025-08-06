@@ -46,6 +46,10 @@
         color: black;
         text-decoration: none; /* Underline links */
     }
+    .medium-text {
+        font-size: xx-large;
+        color: black;
+    }
     .default-text {
         font-size: x-large;
         color: black;
@@ -56,19 +60,8 @@
         text-decoration: none; /* Underline links */
     }
     .small-text {
-        font-size: small;
+        font-size: medium;
         color: black;
-    }
-    .default-text a {
-        font-size: x-large;
-        color: black;
-        text-decoration: none; /* Underline links */
-    }
-    /* FOR POSTS */
-    h1 {
-        padding-top: 0;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
     }
     a {
         color: black;
@@ -80,48 +73,37 @@
     #underline_hover_red a:hover {
         color: red;
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
     #underline_hover a:hover {
         color: red;
         text-decoration: underline;
         text-decoration-thickness: 1px;
+        text-underline-offset: 3px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
-    nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-}
-
-/* Left group hugs the center, pushes to left side */
-.nav-left {
-  display: flex;
-  gap: 2rem;
-  align-items: right;
-}
-
-/* Right group hugs the center, pushes to right side */
-.nav-right {
-  display: flex;
-  gap: 2rem;
-  margin-left: auto; /* pushes right group right */
-}
-
-/* Name centered absolutely */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  font-size: x-large;
-  white-space: nowrap;
-}
-
-
+    .custom-toggler-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .custom-toggler-icon span {
+      height: 4px;
+      background-color: red;
+    }
+    button.navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    .dropdown-menu {
+        border-radius: 0px;
+    }
 </style>
 
 
@@ -129,64 +111,44 @@
 <body>
     
     <div class="container">
-        <nav>
-            <div class="nav-left">
-              <a href="/portfolio/art">ART</a>
-              <a href="/portfolio/fashion">FASHION</a>
-            </div>
+        <nav class="navbar navbar-light bg-white justify-content-between">
+            <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
           
-            <div class="nav-center">
-              <a href="/portfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
-            </div>
+            <div class="dropdown">
+              <button id="dropdownMenuButton" class="navbar-toggler" type="button" style="border-width: 0;">
+                <span class="custom-toggler-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
           
-            <div class="nav-right">
-              <a href="/portfolio/misc">FEATURES</a>
-              <a href="/portfolio/contact">CONTACT</a>
+              <!-- ✅ Basic dropdown -->
+              <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+                <a class="dropdown-item" href="/portfolio/art">ART</a>
+                <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
+                <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
+              </div>
             </div>
           </nav>
           
-          
-          
-        <div class="row">
-            <div class="col-md-12 col-sm-12" id="logo">
-            </div>
-        </div>
-    </div>
-    <div class="container align-items-center">
+    <div class="align-items-center">
         
 <style>
     #logo-image {
         height: 60px;
         padding-top: 5px !important;
     }
-    .secondary-header {
-        font-family: 'Oswald', sans-serif;
-        font: bold;
-        font-size: 25px;
-    }
     .post-container {
-        max-width: 800px;
         margin: 0 auto;
         padding: 20px 20px;
         text-align: left;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .featured-img img {
         width: 100%;
         max-height: 600px;
         object-fit: cover;
         margin-bottom: 10px;
-    }
-    .post-title {
-        font-size: 40px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
-    .post-date {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        font-weight: lighter;
     }
     .post-caption {
         font-style: italic;
@@ -212,7 +174,6 @@
     padding: 0;
     cursor: pointer;
     }
-
     #back-button:focus {
         outline: none;
     }
@@ -223,34 +184,45 @@
 }
 </style>
 
-<div class="container text-center" id="smaller">
-    <a class = "secondary-header" href="https://vasilisaai.github.io/portfolio/fashion/" style="text-decoration: none; color: inherit; font-weight: bold;">FASHION NEWS</a>
-</div>
-<hr> 
+<div class="container" style=" text-align: left;">
+    <h1 class="underline medium-text"><a href="https://vasilisaai.github.io/portfolio/fashion/"  style="color: #000;">Fashion News</a><h1>
+    <hr style="background-color: #000;">
+    <div class="container" style=" text-align: left;">
+        
+        
+            <div class="default-text" style="margin-bottom: 10px;">09.21.23</div>
+            <div class="medium-text">Window Shop Burberry’s Winter Collection Now</div>
 
-<div class = "all" style="align-items: center; justify-content: center; justify-items: center;">
-    <div class="post-title" id="underline">Window Shop Burberry’s Winter Collection Now
-        
-        
-        <div class="post-date" >09.21.23</div>
-    </div>
-
-    <div class="post-container">
-        <div class="featured-img">
-            <img src="../../../uploads/img/092123.jpg" alt="Post Image">
-        </div>
-        <div class="post-caption">Images Courtesy of Burberry.</div>
-    
-    
-    
-        
-    
-        <div class="post-body"><p><strong>Saks Fifth Avenue is the first retail partner to welcome Daniel Lee’s debut.</strong> </p>
+        <div class="post-container">
+            <br>
+            <div class="featured-img">
+                <img src="../../../uploads/img/092123.jpg" alt="Post Image">
+            </div>
+            <div class="small-text" style="font-style: italic;">Images Courtesy of Burberry.</div>
+            <br>
+            
+            <div class="post-body" style="font-size: 20px; line-height: 24px;"><p><strong>Saks Fifth Avenue is the first retail partner to welcome Daniel Lee’s debut.</strong> </p>
 <p>If you’re in New York City, you might notice the windows of <a href="https://www.saksfifthavenue.com/">Saks Fifth Avenue</a> look a little different this week. In honor of Daniel Lee’s debut Winter 2023 collection for <a href="https://www.googleadservices.com/pagead/aclk?sa=L&amp;ai=DChcSEwiIieae77qBAxUDT0cBHUgtBH8YABAAGgJxdQ&amp;ase=2&amp;gclid=CjwKCAjwsKqoBhBPEiwALrrqiKBIGcqtUkFgxWjhXJvqPb2Hj29hNhDdtFx9It-asWE6zyo68SOlthoCOZAQAvD_BwE&amp;ohost=www.google.com&amp;cid=CAESaOD2Dhcri7vRjruEY3nNK6lH6QUolqXJjZnWC2x6TXTxTQj3Z8gyjQwLOKty5lJzqRtZPzNfY3ZTEZjI1Hhz6Xa-RYmCm3TdTKoPudgFltYlCn2YeMVwrWjQWlKcrBJVmI0VTu7kgVDl&amp;sig=AOD64_3LhrhxlxwMEfKF0qy6tnuk6NuwzA&amp;q&amp;nis=4&amp;adurl&amp;ved=2ahUKEwjmptqe77qBAxXQF1kFHQxbC9cQ0Qx6BAgOEAE">Burberry</a>, the department store has created a series of window installations featuring floral sculptures mixed in with pieces from the line including womenswear, menswear, shoes, bags, and other accessories. Not bad for a warm welcome.</p>
 <p>Saks is the first partner to introduce the collection, so of course they had to go all out. Meant to be an immersive experience, the first thing you’ll notice is the bright yellow shade that fills the space. Called mimosa, it’s their seasonal hue. Also worth noting is the floral motif. As seen repeatedly in Lee’s debut, it’s brought to life inside the store. Rose sculptures dot the space, with shelves for products nestled within, as if your new handbag suddenly bloomed to life. If you want to see this in person, you can check it out through September 26th, or browse the collection <a href="https://www.saksfifthavenue.com/brand/burberry">online</a> and at select Saks Fifth Avenue <a href="https://www.saksfifthavenue.com/locations">stores</a>.</p></div>
+        </div>
+</div>
+
     </div>
 </div>
 
+<script>
+    $('#dropdownMenuButton').on('click', function () {
+      $('#dropdownMenu').toggleClass('show');
+    });
+  
+    // Optional: Close dropdown when clicking outside
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('#dropdownMenuButton').length) {
+        $('#dropdownMenu').removeClass('show');
+      }
+    });
+  </script>
+  
 
 </body>
 

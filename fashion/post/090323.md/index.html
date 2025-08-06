@@ -46,6 +46,10 @@
         color: black;
         text-decoration: none; /* Underline links */
     }
+    .medium-text {
+        font-size: xx-large;
+        color: black;
+    }
     .default-text {
         font-size: x-large;
         color: black;
@@ -56,19 +60,8 @@
         text-decoration: none; /* Underline links */
     }
     .small-text {
-        font-size: small;
+        font-size: medium;
         color: black;
-    }
-    .default-text a {
-        font-size: x-large;
-        color: black;
-        text-decoration: none; /* Underline links */
-    }
-    /* FOR POSTS */
-    h1 {
-        padding-top: 0;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
     }
     a {
         color: black;
@@ -80,48 +73,37 @@
     #underline_hover_red a:hover {
         color: red;
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
     #underline_hover a:hover {
         color: red;
         text-decoration: underline;
         text-decoration-thickness: 1px;
+        text-underline-offset: 3px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
-    nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-}
-
-/* Left group hugs the center, pushes to left side */
-.nav-left {
-  display: flex;
-  gap: 2rem;
-  align-items: right;
-}
-
-/* Right group hugs the center, pushes to right side */
-.nav-right {
-  display: flex;
-  gap: 2rem;
-  margin-left: auto; /* pushes right group right */
-}
-
-/* Name centered absolutely */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  font-size: x-large;
-  white-space: nowrap;
-}
-
-
+    .custom-toggler-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .custom-toggler-icon span {
+      height: 4px;
+      background-color: red;
+    }
+    button.navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    .dropdown-menu {
+        border-radius: 0px;
+    }
 </style>
 
 
@@ -129,64 +111,44 @@
 <body>
     
     <div class="container">
-        <nav>
-            <div class="nav-left">
-              <a href="/portfolio/art">ART</a>
-              <a href="/portfolio/fashion">FASHION</a>
-            </div>
+        <nav class="navbar navbar-light bg-white justify-content-between">
+            <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
           
-            <div class="nav-center">
-              <a href="/portfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
-            </div>
+            <div class="dropdown">
+              <button id="dropdownMenuButton" class="navbar-toggler" type="button" style="border-width: 0;">
+                <span class="custom-toggler-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
           
-            <div class="nav-right">
-              <a href="/portfolio/misc">FEATURES</a>
-              <a href="/portfolio/contact">CONTACT</a>
+              <!-- ✅ Basic dropdown -->
+              <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+                <a class="dropdown-item" href="/portfolio/art">ART</a>
+                <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
+                <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
+              </div>
             </div>
           </nav>
           
-          
-          
-        <div class="row">
-            <div class="col-md-12 col-sm-12" id="logo">
-            </div>
-        </div>
-    </div>
-    <div class="container align-items-center">
+    <div class="align-items-center">
         
 <style>
     #logo-image {
         height: 60px;
         padding-top: 5px !important;
     }
-    .secondary-header {
-        font-family: 'Oswald', sans-serif;
-        font: bold;
-        font-size: 25px;
-    }
     .post-container {
-        max-width: 800px;
         margin: 0 auto;
         padding: 20px 20px;
         text-align: left;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .featured-img img {
         width: 100%;
         max-height: 600px;
         object-fit: cover;
         margin-bottom: 10px;
-    }
-    .post-title {
-        font-size: 40px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
-    .post-date {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        font-weight: lighter;
     }
     .post-caption {
         font-style: italic;
@@ -212,7 +174,6 @@
     padding: 0;
     cursor: pointer;
     }
-
     #back-button:focus {
         outline: none;
     }
@@ -223,36 +184,47 @@
 }
 </style>
 
-<div class="container text-center" id="smaller">
-    <a class = "secondary-header" href="https://vasilisaai.github.io/portfolio/fashion/" style="text-decoration: none; color: inherit; font-weight: bold;">FASHION NEWS</a>
-</div>
-<hr> 
+<div class="container" style=" text-align: left;">
+    <h1 class="underline medium-text"><a href="https://vasilisaai.github.io/portfolio/fashion/"  style="color: #000;">Fashion News</a><h1>
+    <hr style="background-color: #000;">
+    <div class="container" style=" text-align: left;">
+        
+        
+            <div class="default-text" style="margin-bottom: 10px;">09.03.23</div>
+            <div class="medium-text">A Coco Chanel Exhibit is Coming to London’s V&amp;A Museum</div>
 
-<div class = "all" style="align-items: center; justify-content: center; justify-items: center;">
-    <div class="post-title" id="underline">A Coco Chanel Exhibit is Coming to London’s V&amp;A Museum
-        
-        
-        <div class="post-date" >09.03.23</div>
-    </div>
-
-    <div class="post-container">
-        <div class="featured-img">
-            <img src="../../../uploads/img/090323.jpg" alt="Post Image">
-        </div>
-        <div class="post-caption">Top image: Gabrielle Chanel, 31 rue Cambon, 1937, Paris. Photo: Roger Schall/ Condé Nast/ Shutterstock</div>
-    
-    
-    
-        
-    
-        <div class="post-body"><h3><strong>The deep dive spans all 60 years of the designer’s career.</strong></h3>
+        <div class="post-container">
+            <br>
+            <div class="featured-img">
+                <img src="../../../uploads/img/090323.jpg" alt="Post Image">
+            </div>
+            <div class="small-text" style="font-style: italic;">Top image: Gabrielle Chanel, 31 rue Cambon, 1937, Paris. Photo: Roger Schall/ Condé Nast/ Shutterstock</div>
+            <br>
+            
+            <div class="post-body" style="font-size: 20px; line-height: 24px;"><h3><strong>The deep dive spans all 60 years of the designer’s career.</strong></h3>
 <p>Over a century before Chanel had a <a href="https://www.forbes.com/sites/celiashatzman/2023/08/30/chanel-is-opening-lucky-chance-diner-in-williamsburg-to-celebrate-a-fragrance-launch/">pop-up diner</a> which served up fragrances rather than pancakes, the fashion house began as a humble hat shop. In 1901, Gabrielle ‘Coco’ Chanel opened her boutique in Paris and over the course of the next seventy years, evolved to become a brand that redefined what womenswear could look like. Her refined elegance and radical simplicity is being honored this September as London’s <a href="https://www.vam.ac.uk/">V&amp;A museum</a> will play host to an exhibit featuring her work and influence.</p>
 <p>Titled <em>Gabrielle Chanel. Fashion Manifesto</em>, the V&amp;A exhibit reimagines the showcase organized by the Palais Galliera, Fashion Museum of the City of Paris. Featuring over 200 looks as well as accessories, perfumes and jewelry, the London iteration brings together rarely seen pieces from the museum’s collection as well as looks from Palais Galliera and the Patrimoine de Chanel, the brand’s heritage collections. Divided into ten sections, highlights include one of the earliest surviving garments dating from 1916. You’ll also find costumes designed for the Ballets Russes production of Le Train Bleu in 1924 as well as pieces from her final collection in 1971. As a nod to London, Chanel’s British inspirations including her use of tweed will also be interwoven into the show.</p>
 <p>“We are happy and honored that the first exhibition dedicated to Gabrielle Chanel to be held in the UK, will be presented at the V&amp;A, one of the most prestigious museums in the world.” said Bruno Pavlovsky, President of Chanel Fashion in a press release. “Gabrielle Chanel was a legend in her own lifetime. This exhibition will analyze her contribution to fashion and her radical vision of a style that created modernity and reflected the aspirations of women and the evolution of their place in society.”</p>
 <p><em>Gabrielle Chanel. Fashion Manifesto</em> runs from September 16th 2023 to February 25th 2024. Tickets are available now on <a href="http://vam.ac.uk/chanel">V&amp;A’s website</a>.</p></div>
+        </div>
+</div>
+
     </div>
 </div>
 
+<script>
+    $('#dropdownMenuButton').on('click', function () {
+      $('#dropdownMenu').toggleClass('show');
+    });
+  
+    // Optional: Close dropdown when clicking outside
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('#dropdownMenuButton').length) {
+        $('#dropdownMenu').removeClass('show');
+      }
+    });
+  </script>
+  
 
 </body>
 

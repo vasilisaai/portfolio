@@ -46,6 +46,10 @@
         color: black;
         text-decoration: none; /* Underline links */
     }
+    .medium-text {
+        font-size: xx-large;
+        color: black;
+    }
     .default-text {
         font-size: x-large;
         color: black;
@@ -56,19 +60,8 @@
         text-decoration: none; /* Underline links */
     }
     .small-text {
-        font-size: small;
+        font-size: medium;
         color: black;
-    }
-    .default-text a {
-        font-size: x-large;
-        color: black;
-        text-decoration: none; /* Underline links */
-    }
-    /* FOR POSTS */
-    h1 {
-        padding-top: 0;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
     }
     a {
         color: black;
@@ -80,48 +73,37 @@
     #underline_hover_red a:hover {
         color: red;
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
     #underline_hover a:hover {
         color: red;
         text-decoration: underline;
         text-decoration-thickness: 1px;
+        text-underline-offset: 3px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
-    nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-}
-
-/* Left group hugs the center, pushes to left side */
-.nav-left {
-  display: flex;
-  gap: 2rem;
-  align-items: right;
-}
-
-/* Right group hugs the center, pushes to right side */
-.nav-right {
-  display: flex;
-  gap: 2rem;
-  margin-left: auto; /* pushes right group right */
-}
-
-/* Name centered absolutely */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  font-size: x-large;
-  white-space: nowrap;
-}
-
-
+    .custom-toggler-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .custom-toggler-icon span {
+      height: 4px;
+      background-color: red;
+    }
+    button.navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    .dropdown-menu {
+        border-radius: 0px;
+    }
 </style>
 
 
@@ -129,64 +111,44 @@
 <body>
     
     <div class="container">
-        <nav>
-            <div class="nav-left">
-              <a href="/portfolio/art">ART</a>
-              <a href="/portfolio/fashion">FASHION</a>
-            </div>
+        <nav class="navbar navbar-light bg-white justify-content-between">
+            <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
           
-            <div class="nav-center">
-              <a href="/portfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
-            </div>
+            <div class="dropdown">
+              <button id="dropdownMenuButton" class="navbar-toggler" type="button" style="border-width: 0;">
+                <span class="custom-toggler-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
           
-            <div class="nav-right">
-              <a href="/portfolio/misc">FEATURES</a>
-              <a href="/portfolio/contact">CONTACT</a>
+              <!-- ✅ Basic dropdown -->
+              <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+                <a class="dropdown-item" href="/portfolio/art">ART</a>
+                <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
+                <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
+              </div>
             </div>
           </nav>
           
-          
-          
-        <div class="row">
-            <div class="col-md-12 col-sm-12" id="logo">
-            </div>
-        </div>
-    </div>
-    <div class="container align-items-center">
+    <div class="align-items-center">
         
 <style>
     #logo-image {
         height: 60px;
         padding-top: 5px !important;
     }
-    .secondary-header {
-        font-family: 'Oswald', sans-serif;
-        font: bold;
-        font-size: 25px;
-    }
     .post-container {
-        max-width: 800px;
         margin: 0 auto;
         padding: 20px 20px;
         text-align: left;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .featured-img img {
         width: 100%;
         max-height: 600px;
         object-fit: cover;
         margin-bottom: 10px;
-    }
-    .post-title {
-        font-size: 40px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
-    .post-date {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        font-weight: lighter;
     }
     .post-caption {
         font-style: italic;
@@ -212,7 +174,6 @@
     padding: 0;
     cursor: pointer;
     }
-
     #back-button:focus {
         outline: none;
     }
@@ -223,29 +184,24 @@
 }
 </style>
 
-<div class="container text-center" id="smaller">
-    <a class = "secondary-header" href="https://vasilisaai.github.io/portfolio/art/" style="text-decoration: none; color: inherit; font-weight: bold;">ART LISTINGS</a>
-</div>
-<hr> 
+<div class="container" style=" text-align: left;">
+    <h1 class="underline medium-text"><a href="https://vasilisaai.github.io/portfolio/art/"  style="color: #000;">Art Listings</a><h1>
+    <hr style="background-color: #000;">
+    <div class="container" style=" text-align: left;">
+        
+        
+            <div class="default-text" style="margin-bottom: 10px;">06.31.24</div>
+            <div class="medium-text">A Survey Of Picasso’s Ceramics; New York’s Truly Old-Fashioned Street Photographer; and Hiroshi Sugimoto Brings His Alchemy to Sydney</div>
 
-<div class = "all" style="align-items: center; justify-content: center; justify-items: center;">
-    <div class="post-title" id="underline">A Survey Of Picasso’s Ceramics; New York’s Truly Old-Fashioned Street Photographer; and Hiroshi Sugimoto Brings His Alchemy to Sydney
-        
-        
-        <div class="post-date" >06.31.24</div>
-    </div>
-
-    <div class="post-container">
-        <div class="featured-img">
-            <img src="../../../uploads/img/063124.jpg" alt="Post Image">
-        </div>
-        <div class="post-caption">Hiroshi Sugimoto’s “Union City Drive-in,” (1993). Photo: Courtesy Hiroshi Sugimoto</div>
-    
-    
-    
-        
-    
-        <div class="post-body"><p><strong>Knokke, “Picasso: Ceramics &amp; Works On Paper” (Opens Aug. 3)</strong><br />
+        <div class="post-container">
+            <br>
+            <div class="featured-img">
+                <img src="../../../uploads/img/063124.jpg" alt="Post Image">
+            </div>
+            <div class="small-text" style="font-style: italic;">Hiroshi Sugimoto’s “Union City Drive-in,” (1993). Photo: Courtesy Hiroshi Sugimoto</div>
+            <br>
+            
+            <div class="post-body" style="font-size: 20px; line-height: 24px;"><p><strong>Knokke, “Picasso: Ceramics &amp; Works On Paper” (Opens Aug. 3)</strong><br />
  In a seaside Belgian town once frequented by painters, a showcase of Pablo Picasso’s ceramics and drawings illustrates the scope of the artist’s genius. Picasso first picked up clay in 1947, in his 60s, with some of his most famous pieces of work behind him. He would produce at least 600 unique editions of plates, bowls, and vases decorated with playful facial features, and zoomorphic motifs seen in his earlier paintings. They suggest his numerous sources of inspiration, from red and black Greek pottery to fifteenth-century Italian graffiti. <a href="https://maruanimercier.com/exhibitions/146-ceramics-works-on-paper-picasso/"><em>maruanimercier.com</em></a></p>
 <p><strong>London, “Nature Painting Nature” (Until Sept. 21)</strong><br />
  The humble beauty of landscapes, blossoms, and trees has captivated artists for centuries. For some, the quintessential subject is a means to express profound emotion and personal experiences. This group presentation brings together work by painters of the informal New York School and a younger generation of contemporary artists under this theme. The floral still lifes of American painters Jane Freilicher and Jordan Casteel, done 50 years apart, have inklings of a self-portrait in their delicate composition and poignant color palettes. Others like Grace Hartigan, Leiko Ikemura, and Sabine Moritz look to the outdoors to grapple with their place in the world. <a href="https://www.pilarcorrias.com/exhibitions/442-nature-painting-nature-curated-by-lydia-yee/"><em>pilarcorrias.com</em></a></p>
@@ -255,9 +211,25 @@
  Also showing Austrian artist (and past guest) Erin Wurm’s “Dreamwalkers” through Aug. 25, the Fosun Foundation presents the delightful portraits American photographer William Wegman has been taking of his Weimaraner muses since the ’70s. Some are large-scale, taken on the rare 20 x 24 Polaroid camera—before the company went bankrupt and Wegman switched to digital in 2001—and seen in Shanghai for the first time. <a href="https://www.fosunfoundation.com/en/exhibitions/william-wegman-favorite-models-press-release"><em>fosunfoundation.com</em></a></p>
 <p><strong>Sydney, “Hiroshi Sugimoto: Time Machine” (Opens Aug. 2)</strong><br />
  Most of Japanese photographer Hiroshi Sugimoto’s globally exhibited work is shot in black and white. “Credibility is better in black and white than in color,” he says. Sugimoto’s interest in the illusions of photography, generally considered a more honest medium, informs his extensive practice. Armed with a mastery of film technique (he develops the large format film in the darkroom himself) and the concerns of a philosopher, Sugimoto’s photo series involve taxidermy dioramas, theaters, and sea horizons—all which try to understand the shortcomings of photography in preserving memory. This will be the largest-ever exhibition of his work, featuring key photos that trace his career from the 1970s to today. <a href="https://www.mca.com.au/exhibitions/hiroshi-sugimoto-time-machine/"><em>mca.com.au</em></a></p></div>
+        </div>
+</div>
+
     </div>
 </div>
 
+<script>
+    $('#dropdownMenuButton').on('click', function () {
+      $('#dropdownMenu').toggleClass('show');
+    });
+  
+    // Optional: Close dropdown when clicking outside
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('#dropdownMenuButton').length) {
+        $('#dropdownMenu').removeClass('show');
+      }
+    });
+  </script>
+  
 
 </body>
 

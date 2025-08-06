@@ -46,6 +46,10 @@
         color: black;
         text-decoration: none; /* Underline links */
     }
+    .medium-text {
+        font-size: xx-large;
+        color: black;
+    }
     .default-text {
         font-size: x-large;
         color: black;
@@ -56,19 +60,8 @@
         text-decoration: none; /* Underline links */
     }
     .small-text {
-        font-size: small;
+        font-size: medium;
         color: black;
-    }
-    .default-text a {
-        font-size: x-large;
-        color: black;
-        text-decoration: none; /* Underline links */
-    }
-    /* FOR POSTS */
-    h1 {
-        padding-top: 0;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
     }
     a {
         color: black;
@@ -80,48 +73,37 @@
     #underline_hover_red a:hover {
         color: red;
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
     #underline_hover a:hover {
         color: red;
         text-decoration: underline;
         text-decoration-thickness: 1px;
+        text-underline-offset: 3px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
-    nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-}
-
-/* Left group hugs the center, pushes to left side */
-.nav-left {
-  display: flex;
-  gap: 2rem;
-  align-items: right;
-}
-
-/* Right group hugs the center, pushes to right side */
-.nav-right {
-  display: flex;
-  gap: 2rem;
-  margin-left: auto; /* pushes right group right */
-}
-
-/* Name centered absolutely */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  font-size: x-large;
-  white-space: nowrap;
-}
-
-
+    .custom-toggler-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .custom-toggler-icon span {
+      height: 4px;
+      background-color: red;
+    }
+    button.navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    .dropdown-menu {
+        border-radius: 0px;
+    }
 </style>
 
 
@@ -129,64 +111,44 @@
 <body>
     
     <div class="container">
-        <nav>
-            <div class="nav-left">
-              <a href="/portfolio/art">ART</a>
-              <a href="/portfolio/fashion">FASHION</a>
-            </div>
+        <nav class="navbar navbar-light bg-white justify-content-between">
+            <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
           
-            <div class="nav-center">
-              <a href="/portfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
-            </div>
+            <div class="dropdown">
+              <button id="dropdownMenuButton" class="navbar-toggler" type="button" style="border-width: 0;">
+                <span class="custom-toggler-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
           
-            <div class="nav-right">
-              <a href="/portfolio/misc">FEATURES</a>
-              <a href="/portfolio/contact">CONTACT</a>
+              <!-- ✅ Basic dropdown -->
+              <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+                <a class="dropdown-item" href="/portfolio/art">ART</a>
+                <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
+                <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
+              </div>
             </div>
           </nav>
           
-          
-          
-        <div class="row">
-            <div class="col-md-12 col-sm-12" id="logo">
-            </div>
-        </div>
-    </div>
-    <div class="container align-items-center">
+    <div class="align-items-center">
         
 <style>
     #logo-image {
         height: 60px;
         padding-top: 5px !important;
     }
-    .secondary-header {
-        font-family: 'Oswald', sans-serif;
-        font: bold;
-        font-size: 25px;
-    }
     .post-container {
-        max-width: 800px;
         margin: 0 auto;
         padding: 20px 20px;
         text-align: left;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .featured-img img {
         width: 100%;
         max-height: 600px;
         object-fit: cover;
         margin-bottom: 10px;
-    }
-    .post-title {
-        font-size: 40px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
-    .post-date {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        font-weight: lighter;
     }
     .post-caption {
         font-style: italic;
@@ -212,7 +174,6 @@
     padding: 0;
     cursor: pointer;
     }
-
     #back-button:focus {
         outline: none;
     }
@@ -223,29 +184,24 @@
 }
 </style>
 
-<div class="container text-center" id="smaller">
-    <a class = "secondary-header" href="https://vasilisaai.github.io/portfolio/art/" style="text-decoration: none; color: inherit; font-weight: bold;">ART LISTINGS</a>
-</div>
-<hr> 
+<div class="container" style=" text-align: left;">
+    <h1 class="underline medium-text"><a href="https://vasilisaai.github.io/portfolio/art/"  style="color: #000;">Art Listings</a><h1>
+    <hr style="background-color: #000;">
+    <div class="container" style=" text-align: left;">
+        
+        
+            <div class="default-text" style="margin-bottom: 10px;">06.19.24</div>
+            <div class="medium-text">An Activist Expresses True Freedom; Donald Judd in Basel; and More Must-See Exhibitions</div>
 
-<div class = "all" style="align-items: center; justify-content: center; justify-items: center;">
-    <div class="post-title" id="underline">An Activist Expresses True Freedom; Donald Judd in Basel; and More Must-See Exhibitions
-        
-        
-        <div class="post-date" >06.19.24</div>
-    </div>
-
-    <div class="post-container">
-        <div class="featured-img">
-            <img src="../../../uploads/img/061924.jpg" alt="Post Image">
-        </div>
-        <div class="post-caption">An untitled Gavin Jantjes acrylic on canvas, 1989. Photo: Courtesy Whitechapel Gallery</div>
-    
-    
-    
-        
-    
-        <div class="post-body"><p><strong>Basel, “Donald Judd” (Until Sept. 7)</strong><br />
+        <div class="post-container">
+            <br>
+            <div class="featured-img">
+                <img src="../../../uploads/img/061924.jpg" alt="Post Image">
+            </div>
+            <div class="small-text" style="font-style: italic;">An untitled Gavin Jantjes acrylic on canvas, 1989. Photo: Courtesy Whitechapel Gallery</div>
+            <br>
+            
+            <div class="post-body" style="font-size: 20px; line-height: 24px;"><p><strong>Basel, “Donald Judd” (Until Sept. 7)</strong><br />
  To coincide with Art Basel and Design Miami, Gagosian presents 10 of Donald Judd’s trademark plexiglass and aluminum wall-mounted rectangular works made in Switzerland between 1987 and 1991. Though the late American artist spent most of his time working from his SoHo studio and home in Marfa, Texas, he was closely connected to Switzerland, where he designed his lakeside home, exhibited, and collaborated with the industrial firms that produced a large number of his plexiglass pieces. <a href="https://gagosian.com/exhibitions/2024/donald-judd-basel/"><em>gagosian.com</em></a></p>
 <p><strong>Bilbao, “Martha Jungwirth” (Until Sept. 22)</strong><br />
  Viennese painter Martha Jungwirth describes her work as a diary of her subconscious, expressed through loose, casual brush strokes, often on an unpretentious cardboard-brown background. Bits of personal memories, art history, and Greek mythology all become sources of inspiration as she paints—and can be seen as a kind of Freudian game of interpretation. In this retrospective, the Guggenheim brings together 70 of her paintings and watercolors from nearly six decades of her career. <a href="https://www.guggenheim-bilbao.eus/en/exhibitions/martha-jungwirth"><em>guggenheim-bilbao.eus</em></a></p>
@@ -255,9 +211,25 @@
  The struggle for liberation is ingrained in the paintings and prints of artist Gavin Jantjes, who was born in South Africa in 1948, the first year of apartheid. A bold artist and activist, he was later exiled from the country due to his political beliefs. He received his art education in Germany, Norway, and the UK, where he became a transformational figure in the art scene as a curator and lecturer. This retrospective—which coincides with the 30th anniversary of South Africa’s first free elections—is his largest-ever in the UK and presents 100 prints, drawings, and paintings. <a href="https://www.whitechapelgallery.org/exhibitions/gavin-jantjes-to-be-free-a-retrospective-1970-2023/"><em>whitechapelgallery.org</em></a></p>
 <p><strong>Los Angeles, “David Medalla: In Conversation with the Cosmos” (Until Sept. 15)</strong><br />
  This is the first comprehensive study in the U.S. of the late Filipino artist David Medalla’s distinctive career, which comprised radical kinetic sculptures, paintings, and performances. Born in Manila, Medalla spent the larger part of his life in London. There, he established his reputation as a pioneer of kinetic art with his angelic Cloud Canyons, bubble-machine-made sculptures that have been exhibited internationally. The exhibit begins with early paintings and drawings from the late 1950s and encompasses the manifold expressions of Medalla’s work. <a href="https://hammer.ucla.edu/exhibitions/2024/david-medalla-conversation-cosmos"><em>hammer.ucla.edu</em></a></p></div>
+        </div>
+</div>
+
     </div>
 </div>
 
+<script>
+    $('#dropdownMenuButton').on('click', function () {
+      $('#dropdownMenu').toggleClass('show');
+    });
+  
+    // Optional: Close dropdown when clicking outside
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('#dropdownMenuButton').length) {
+        $('#dropdownMenu').removeClass('show');
+      }
+    });
+  </script>
+  
 
 </body>
 

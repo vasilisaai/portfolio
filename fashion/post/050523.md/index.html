@@ -46,6 +46,10 @@
         color: black;
         text-decoration: none; /* Underline links */
     }
+    .medium-text {
+        font-size: xx-large;
+        color: black;
+    }
     .default-text {
         font-size: x-large;
         color: black;
@@ -56,19 +60,8 @@
         text-decoration: none; /* Underline links */
     }
     .small-text {
-        font-size: small;
+        font-size: medium;
         color: black;
-    }
-    .default-text a {
-        font-size: x-large;
-        color: black;
-        text-decoration: none; /* Underline links */
-    }
-    /* FOR POSTS */
-    h1 {
-        padding-top: 0;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
     }
     a {
         color: black;
@@ -80,48 +73,37 @@
     #underline_hover_red a:hover {
         color: red;
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
     #underline_hover a:hover {
         color: red;
         text-decoration: underline;
         text-decoration-thickness: 1px;
+        text-underline-offset: 3px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
-    nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-}
-
-/* Left group hugs the center, pushes to left side */
-.nav-left {
-  display: flex;
-  gap: 2rem;
-  align-items: right;
-}
-
-/* Right group hugs the center, pushes to right side */
-.nav-right {
-  display: flex;
-  gap: 2rem;
-  margin-left: auto; /* pushes right group right */
-}
-
-/* Name centered absolutely */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  font-size: x-large;
-  white-space: nowrap;
-}
-
-
+    .custom-toggler-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .custom-toggler-icon span {
+      height: 4px;
+      background-color: red;
+    }
+    button.navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    .dropdown-menu {
+        border-radius: 0px;
+    }
 </style>
 
 
@@ -129,64 +111,44 @@
 <body>
     
     <div class="container">
-        <nav>
-            <div class="nav-left">
-              <a href="/portfolio/art">ART</a>
-              <a href="/portfolio/fashion">FASHION</a>
-            </div>
+        <nav class="navbar navbar-light bg-white justify-content-between">
+            <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
           
-            <div class="nav-center">
-              <a href="/portfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
-            </div>
+            <div class="dropdown">
+              <button id="dropdownMenuButton" class="navbar-toggler" type="button" style="border-width: 0;">
+                <span class="custom-toggler-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
           
-            <div class="nav-right">
-              <a href="/portfolio/misc">FEATURES</a>
-              <a href="/portfolio/contact">CONTACT</a>
+              <!-- ✅ Basic dropdown -->
+              <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+                <a class="dropdown-item" href="/portfolio/art">ART</a>
+                <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
+                <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
+              </div>
             </div>
           </nav>
           
-          
-          
-        <div class="row">
-            <div class="col-md-12 col-sm-12" id="logo">
-            </div>
-        </div>
-    </div>
-    <div class="container align-items-center">
+    <div class="align-items-center">
         
 <style>
     #logo-image {
         height: 60px;
         padding-top: 5px !important;
     }
-    .secondary-header {
-        font-family: 'Oswald', sans-serif;
-        font: bold;
-        font-size: 25px;
-    }
     .post-container {
-        max-width: 800px;
         margin: 0 auto;
         padding: 20px 20px;
         text-align: left;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .featured-img img {
         width: 100%;
         max-height: 600px;
         object-fit: cover;
         margin-bottom: 10px;
-    }
-    .post-title {
-        font-size: 40px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
-    .post-date {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        font-weight: lighter;
     }
     .post-caption {
         font-style: italic;
@@ -212,7 +174,6 @@
     padding: 0;
     cursor: pointer;
     }
-
     #back-button:focus {
         outline: none;
     }
@@ -223,37 +184,48 @@
 }
 </style>
 
-<div class="container text-center" id="smaller">
-    <a class = "secondary-header" href="https://vasilisaai.github.io/portfolio/fashion/" style="text-decoration: none; color: inherit; font-weight: bold;">FASHION NEWS</a>
-</div>
-<hr> 
+<div class="container" style=" text-align: left;">
+    <h1 class="underline medium-text"><a href="https://vasilisaai.github.io/portfolio/fashion/"  style="color: #000;">Fashion News</a><h1>
+    <hr style="background-color: #000;">
+    <div class="container" style=" text-align: left;">
+        
+        
+            <div class="default-text" style="margin-bottom: 10px;">05.05.23</div>
+            <div class="medium-text">Guess How Fast Blackpink’s Jennie Collaboration With Calvin Klein Will Sell Out?</div>
 
-<div class = "all" style="align-items: center; justify-content: center; justify-items: center;">
-    <div class="post-title" id="underline">Guess How Fast Blackpink’s Jennie Collaboration With Calvin Klein Will Sell Out?
-        
-        
-        <div class="post-date" >05.05.23</div>
-    </div>
-
-    <div class="post-container">
-        <div class="featured-img">
-            <img src="../../../uploads/img/050523.jpg" alt="Post Image">
-        </div>
-        <div class="post-caption"></div>
-    
-    
-    
-        
-    
-        <div class="post-body"><h3>Blinks, be prepared to set your alarms.</h3>
+        <div class="post-container">
+            <br>
+            <div class="featured-img">
+                <img src="../../../uploads/img/050523.jpg" alt="Post Image">
+            </div>
+            <div class="small-text" style="font-style: italic;"></div>
+            <br>
+            
+            <div class="post-body" style="font-size: 20px; line-height: 24px;"><h3>Blinks, be prepared to set your alarms.</h3>
 <p>In the last few weeks Blackpink’s Jennie Kim has blessed the world with a Coachella performance turned <a href="https://www.tiktok.com/search?q=jennie coachella are you ready&amp;t=1683212242023">TikTok meme</a>, a delightful Met Gala look, and now she’s done it again, this time with her very own <a href="https://www.calvinklein.us/en/jennie-collection">Calvin Klein capsule collection</a>. Aptly titled Jennie Kim for Calvin Klein, it features the brand’s classic silhouettes infused with her angelic touch.</p>
 <p>For sharp-eyed fans, this comes as no surprise — Jennie has been <a href="https://www.tiktok.com/@pinkshvt/video/7227118568477969691?q=jennie calvin klein collection&amp;t=1683213396136">sneakily teasing the pieces</a> at soundchecks over the last few weeks. The two have history together as she’s been a face for the brand since 2021. But even before that, she considered herself a longtime fan. “Collaborating with Calvin Klein on this capsule has been an exciting progression in our partnership,” says Jennie via the press release. “This collection reflects my everyday style and is based on many essentials that have become staples in my wardrobe.” </p>
 <p>Everyday for Jennie means minimalist bralettes and sweats in a soothing palette of pastels in shades like lilac and chalk blue. The collection also includes a selection of sleek bodysuits, dresses, and skirts that are the perfect blend of comfortable and sexy. To complete the capsule wardrobe there are also denim shirts and nineties-inspired loose jeans that come in matching colors. Plus, embroidered in the t-shirts and crewnecks is a loving touch: the Calvin Klein logo and an adorable doodle heart written in her handwriting. </p>
 <p>To get fans excited (not that they need much prodding) the brand dropped the campaign images and short films today. Shot by Korean photographer Hong Jang Hyuan, Jennie is silhouetted against a mystical waterfall, falling into a pile of mattresses, and laying serenely in a pool of water. It’s a surreal yet soft departure from her usual K-pop persona, which is more splashy and dramatic. </p>
 <p>Prices range from $25 to $150 and hits select stores as well as <a href="https://www.calvinklein.us/">online</a> on May 10. Whether you’re a <a href="https://black-pink.fandom.com/wiki/Blink_(fandom)">Blink</a> or not, the collection is guaranteed to be sell out fast so clear your schedule and expect to compete with her army of fans to get your hands on a piece.</p></div>
+        </div>
+</div>
+
     </div>
 </div>
 
+<script>
+    $('#dropdownMenuButton').on('click', function () {
+      $('#dropdownMenu').toggleClass('show');
+    });
+  
+    // Optional: Close dropdown when clicking outside
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('#dropdownMenuButton').length) {
+        $('#dropdownMenu').removeClass('show');
+      }
+    });
+  </script>
+  
 
 </body>
 

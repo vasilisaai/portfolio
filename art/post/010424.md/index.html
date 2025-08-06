@@ -46,6 +46,10 @@
         color: black;
         text-decoration: none; /* Underline links */
     }
+    .medium-text {
+        font-size: xx-large;
+        color: black;
+    }
     .default-text {
         font-size: x-large;
         color: black;
@@ -56,19 +60,8 @@
         text-decoration: none; /* Underline links */
     }
     .small-text {
-        font-size: small;
+        font-size: medium;
         color: black;
-    }
-    .default-text a {
-        font-size: x-large;
-        color: black;
-        text-decoration: none; /* Underline links */
-    }
-    /* FOR POSTS */
-    h1 {
-        padding-top: 0;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
     }
     a {
         color: black;
@@ -80,48 +73,37 @@
     #underline_hover_red a:hover {
         color: red;
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
     #underline_hover a:hover {
         color: red;
         text-decoration: underline;
         text-decoration-thickness: 1px;
+        text-underline-offset: 3px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
-    nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-}
-
-/* Left group hugs the center, pushes to left side */
-.nav-left {
-  display: flex;
-  gap: 2rem;
-  align-items: right;
-}
-
-/* Right group hugs the center, pushes to right side */
-.nav-right {
-  display: flex;
-  gap: 2rem;
-  margin-left: auto; /* pushes right group right */
-}
-
-/* Name centered absolutely */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  font-size: x-large;
-  white-space: nowrap;
-}
-
-
+    .custom-toggler-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .custom-toggler-icon span {
+      height: 4px;
+      background-color: red;
+    }
+    button.navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    .dropdown-menu {
+        border-radius: 0px;
+    }
 </style>
 
 
@@ -129,64 +111,44 @@
 <body>
     
     <div class="container">
-        <nav>
-            <div class="nav-left">
-              <a href="/portfolio/art">ART</a>
-              <a href="/portfolio/fashion">FASHION</a>
-            </div>
+        <nav class="navbar navbar-light bg-white justify-content-between">
+            <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
           
-            <div class="nav-center">
-              <a href="/portfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
-            </div>
+            <div class="dropdown">
+              <button id="dropdownMenuButton" class="navbar-toggler" type="button" style="border-width: 0;">
+                <span class="custom-toggler-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
           
-            <div class="nav-right">
-              <a href="/portfolio/misc">FEATURES</a>
-              <a href="/portfolio/contact">CONTACT</a>
+              <!-- ✅ Basic dropdown -->
+              <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+                <a class="dropdown-item" href="/portfolio/art">ART</a>
+                <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
+                <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
+              </div>
             </div>
           </nav>
           
-          
-          
-        <div class="row">
-            <div class="col-md-12 col-sm-12" id="logo">
-            </div>
-        </div>
-    </div>
-    <div class="container align-items-center">
+    <div class="align-items-center">
         
 <style>
     #logo-image {
         height: 60px;
         padding-top: 5px !important;
     }
-    .secondary-header {
-        font-family: 'Oswald', sans-serif;
-        font: bold;
-        font-size: 25px;
-    }
     .post-container {
-        max-width: 800px;
         margin: 0 auto;
         padding: 20px 20px;
         text-align: left;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .featured-img img {
         width: 100%;
         max-height: 600px;
         object-fit: cover;
         margin-bottom: 10px;
-    }
-    .post-title {
-        font-size: 40px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
-    .post-date {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        font-weight: lighter;
     }
     .post-caption {
         font-style: italic;
@@ -212,7 +174,6 @@
     padding: 0;
     cursor: pointer;
     }
-
     #back-button:focus {
         outline: none;
     }
@@ -223,29 +184,24 @@
 }
 </style>
 
-<div class="container text-center" id="smaller">
-    <a class = "secondary-header" href="https://vasilisaai.github.io/portfolio/art/" style="text-decoration: none; color: inherit; font-weight: bold;">ART LISTINGS</a>
-</div>
-<hr> 
+<div class="container" style=" text-align: left;">
+    <h1 class="underline medium-text"><a href="https://vasilisaai.github.io/portfolio/art/"  style="color: #000;">Art Listings</a><h1>
+    <hr style="background-color: #000;">
+    <div class="container" style=" text-align: left;">
+        
+        
+            <div class="default-text" style="margin-bottom: 10px;">01.04.24</div>
+            <div class="medium-text">What to See This Week by a Italian Photographer, a Turkish Opera Singer, and a Czech Literary Rebel</div>
 
-<div class = "all" style="align-items: center; justify-content: center; justify-items: center;">
-    <div class="post-title" id="underline">What to See This Week by a Italian Photographer, a Turkish Opera Singer, and a Czech Literary Rebel
-        
-        
-        <div class="post-date" >01.04.24</div>
-    </div>
-
-    <div class="post-container">
-        <div class="featured-img">
-            <img src="../../../uploads/img/010424.jpg" alt="Post Image">
-        </div>
-        <div class="post-caption">Alighiero Boetti, Spoleto by Priscilla Rattazzi, 1975. Photo: Courtesy Robilant+Voena</div>
-    
-    
-    
-        
-    
-        <div class="post-body"><p><strong>Berlin, “Semiha Berksoy: Singing in Full Color” (Opens Dec. 6)</strong><br />
+        <div class="post-container">
+            <br>
+            <div class="featured-img">
+                <img src="../../../uploads/img/010424.jpg" alt="Post Image">
+            </div>
+            <div class="small-text" style="font-style: italic;">Alighiero Boetti, Spoleto by Priscilla Rattazzi, 1975. Photo: Courtesy Robilant+Voena</div>
+            <br>
+            
+            <div class="post-body" style="font-size: 20px; line-height: 24px;"><p><strong>Berlin, “Semiha Berksoy: Singing in Full Color” (Opens Dec. 6)</strong><br />
  Semiha Berksoy was the star of the first Turkish sound movie “Istanbul Sokaklari” (“The Streets of Istanbul”) in 1931. Soon after, her performance in the first Turkish opera, “Özsoy,” is said to have stunned Mustafa Kemal Atatürk, the first president of the republic. Berksoy’s career as a soprano helped establish Turkish opera internationally, and meanwhile she became an acclaimed cultural symbol. She painted, too, privately at first but then gained increasing recognition for her introspective portraits charged with the same drama as her voice. This exhibition presents 80 paintings and works on paper, archival documents, video, and audio for the first time in Berlin, the city where Berksoy studied and became the first Turkish prima donna to perform on a European stage. <a href="https://www.smb.museum/en/museums-institutions/hamburger-bahnhof/exhibitions/detail/semiha-berksoy/"><em>smb.museum</em></a></p>
 <p><strong>London, “Priscilla Rattazzi: Between Worlds” (Until Dec. 20)</strong><br />
  Through the ’80s, Italian fashion and portrait photographer Priscilla Rattazzi was shooting the likes of Diana Vreeland, Loulou de la Falaise, and Gianni Agnelli for “Vogue Italia” and “New York.” So in 2020, when Rattazzi went out West to photograph the dramatic endangered rock formations in southern Utah, she did so with the touch of a portraitist, capturing the sculptural landscape in a strangely moving light. The series, titled “Hoodooland,” is featured with Rattazzi’s work from 1975 to 2021, in her first solo exhibition in the UK. <a href="https://www.robilantvoena.com/exhibitions/priscilla-rattazzi-between-worlds"><em>robilantvoena.com</em></a></p>
@@ -253,9 +209,25 @@
  The word “photorealism” first appeared in a 1970 catalogue for the Whitney Museum show “Twenty-two Realists.” Painters like Richard Estes and Audrey Flack adopted the camera into their art practice, rejecting the point of abstract expressionism for a different one. Instead, they opted to be as faithful to reality as possible, painting phone booths, gumball machines, cars, and palm trees in incredible detail. Gathering more than 40 artists, this exhibition follows the evolution of the genre into today’s image-saturated era, and widens its scope to encompass paintings, drawings, and sculpture. <a href="https://www.moca.org/exhibition/ordinary-people"><em>moca.org</em></a></p>
 <p><strong>New York, “Franz Kafka” (Until April 13)</strong><br />
  When Gregor Samsa woke up one morning to find himself transformed into a giant insect in “The Metamorphosis,” he thought, “how about if I sleep a little bit longer and forget all this nonsense.” These forlorn words have not lost their resonance today. Kafka died of tuberculosis at 40, leaving behind a small but incredibly influential body of work. On the 100th anniversary of his death, this exhibition remembers the writer through his literary manuscripts, letters, diaries, drawings, and photographs. On show are the original manuscript of “The Metamorphosis,” his novels “Amerika” and “The Castle,” and a diary in which he composed the 1912 short story “The Judgment.” <a href="https://www.themorgan.org/exhibitions/franz-kafka"><em>themorgan.org</em></a></p></div>
+        </div>
+</div>
+
     </div>
 </div>
 
+<script>
+    $('#dropdownMenuButton').on('click', function () {
+      $('#dropdownMenu').toggleClass('show');
+    });
+  
+    // Optional: Close dropdown when clicking outside
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('#dropdownMenuButton').length) {
+        $('#dropdownMenu').removeClass('show');
+      }
+    });
+  </script>
+  
 
 </body>
 

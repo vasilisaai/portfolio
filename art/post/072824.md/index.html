@@ -46,6 +46,10 @@
         color: black;
         text-decoration: none; /* Underline links */
     }
+    .medium-text {
+        font-size: xx-large;
+        color: black;
+    }
     .default-text {
         font-size: x-large;
         color: black;
@@ -56,19 +60,8 @@
         text-decoration: none; /* Underline links */
     }
     .small-text {
-        font-size: small;
+        font-size: medium;
         color: black;
-    }
-    .default-text a {
-        font-size: x-large;
-        color: black;
-        text-decoration: none; /* Underline links */
-    }
-    /* FOR POSTS */
-    h1 {
-        padding-top: 0;
-        font-family: 'Oswald', sans-serif;
-        font-weight: bold;
     }
     a {
         color: black;
@@ -80,48 +73,37 @@
     #underline_hover_red a:hover {
         color: red;
         text-decoration: underline;
-        text-decoration-thickness: 3px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 6px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
     #underline_hover a:hover {
         color: red;
         text-decoration: underline;
         text-decoration-thickness: 1px;
+        text-underline-offset: 3px; /* Adjust this value to increase or decrease the space */
+
         text-decoration-color: red;
     }
-    nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-}
-
-/* Left group hugs the center, pushes to left side */
-.nav-left {
-  display: flex;
-  gap: 2rem;
-  align-items: right;
-}
-
-/* Right group hugs the center, pushes to right side */
-.nav-right {
-  display: flex;
-  gap: 2rem;
-  margin-left: auto; /* pushes right group right */
-}
-
-/* Name centered absolutely */
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: bold;
-  font-size: x-large;
-  white-space: nowrap;
-}
-
-
+    .custom-toggler-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .custom-toggler-icon span {
+      height: 4px;
+      background-color: red;
+    }
+    button.navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    .dropdown-menu {
+        border-radius: 0px;
+    }
 </style>
 
 
@@ -129,64 +111,44 @@
 <body>
     
     <div class="container">
-        <nav>
-            <div class="nav-left">
-              <a href="/portfolio/art">ART</a>
-              <a href="/portfolio/fashion">FASHION</a>
-            </div>
+        <nav class="navbar navbar-light bg-white justify-content-between">
+            <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
           
-            <div class="nav-center">
-              <a href="/portfolio/" class="default-text" style="color: red;">Vasilisa Ioukhnovets</a>
-            </div>
+            <div class="dropdown">
+              <button id="dropdownMenuButton" class="navbar-toggler" type="button" style="border-width: 0;">
+                <span class="custom-toggler-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
           
-            <div class="nav-right">
-              <a href="/portfolio/misc">FEATURES</a>
-              <a href="/portfolio/contact">CONTACT</a>
+              <!-- ✅ Basic dropdown -->
+              <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
+                <a class="dropdown-item" href="/portfolio/art">ART</a>
+                <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
+                <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
+              </div>
             </div>
           </nav>
           
-          
-          
-        <div class="row">
-            <div class="col-md-12 col-sm-12" id="logo">
-            </div>
-        </div>
-    </div>
-    <div class="container align-items-center">
+    <div class="align-items-center">
         
 <style>
     #logo-image {
         height: 60px;
         padding-top: 5px !important;
     }
-    .secondary-header {
-        font-family: 'Oswald', sans-serif;
-        font: bold;
-        font-size: 25px;
-    }
     .post-container {
-        max-width: 800px;
         margin: 0 auto;
         padding: 20px 20px;
         text-align: left;
-        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     .featured-img img {
         width: 100%;
         max-height: 600px;
         object-fit: cover;
         margin-bottom: 10px;
-    }
-    .post-title {
-        font-size: 40px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
-    .post-date {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        font-weight: lighter;
     }
     .post-caption {
         font-style: italic;
@@ -212,7 +174,6 @@
     padding: 0;
     cursor: pointer;
     }
-
     #back-button:focus {
         outline: none;
     }
@@ -223,29 +184,24 @@
 }
 </style>
 
-<div class="container text-center" id="smaller">
-    <a class = "secondary-header" href="https://vasilisaai.github.io/portfolio/art/" style="text-decoration: none; color: inherit; font-weight: bold;">ART LISTINGS</a>
-</div>
-<hr> 
+<div class="container" style=" text-align: left;">
+    <h1 class="underline medium-text"><a href="https://vasilisaai.github.io/portfolio/art/"  style="color: #000;">Art Listings</a><h1>
+    <hr style="background-color: #000;">
+    <div class="container" style=" text-align: left;">
+        
+        
+            <div class="default-text" style="margin-bottom: 10px;">07.28.24</div>
+            <div class="medium-text">A Forgotten Expressionist Weaver and Painter Rediscovered in Switzerland; Another Look at the Original Queen of the Selfie; the Overlooked Artistry of Ethiopia</div>
 
-<div class = "all" style="align-items: center; justify-content: center; justify-items: center;">
-    <div class="post-title" id="underline">A Forgotten Expressionist Weaver and Painter Rediscovered in Switzerland; Another Look at the Original Queen of the Selfie; the Overlooked Artistry of Ethiopia
-        
-        
-        <div class="post-date" >07.28.24</div>
-    </div>
-
-    <div class="post-container">
-        <div class="featured-img">
-            <img src="../../../uploads/img/072824.jpg" alt="Post Image">
-        </div>
-        <div class="post-caption">The tapestries shown at “Lise Gujer: A New Way of Painting” at the Museum of Fine Arts Chur.</div>
-    
-    
-    
-        
-    
-        <div class="post-body"><p><strong>Chur, “Lise Gujer: A New Way of Painting” (Until Nov. 17)</strong><br />
+        <div class="post-container">
+            <br>
+            <div class="featured-img">
+                <img src="../../../uploads/img/072824.jpg" alt="Post Image">
+            </div>
+            <div class="small-text" style="font-style: italic;">The tapestries shown at “Lise Gujer: A New Way of Painting” at the Museum of Fine Arts Chur.</div>
+            <br>
+            
+            <div class="post-body" style="font-size: 20px; line-height: 24px;"><p><strong>Chur, “Lise Gujer: A New Way of Painting” (Until Nov. 17)</strong><br />
  In opposition to what he saw as the inauthenticity of academic art, the German painter and printmaker Ernst Ludwig Kirchner developed a simplistic, spontaneous aesthetic that would birth German Expressionism. In the latter half of his life, in 1922, Kirchner became acquainted with Lise Gujer, a Swiss weaver. Thus began a 16-year-long collaboration during which Gujer produced more than 30 tapestries from the Expressionist’s designs, featuring a strong color palette and spirited abstract characters. The painter’s work, consequently, would take on a stricter 2D style, deemed “carpet style” because of its likeness to the pattern of oriental carpets. This will be the first exhibition in two decades dedicated to Gujer’s vivid textiles and will feature various records documenting the fruitful partnership. <a href="https://kunstmuseum.gr.ch/"><em>kunstmuseum.gr.ch</em></a></p>
 <p><strong>Dallas, “Frida: Beyond the Myth” (Until Nov. 17)</strong><br />
  “I paint flowers so they will not die,” said Frida Kahlo. Perhaps the same pertains to her potent self-portraits, which, in an introspective and therapeutic pursuit, she painted again and again for the length of her three-decade career. Forever preserving herself in her work, Kahlo pioneered the modern art of the selfie. This exhibit offers a helpful secondary perspective, examining Kahlo not only as she saw herself, but in the eyes of others, with 30 works by Kahlo and 31 photographs of her taken by her peers. <a href="https://frida.dma.org/p/1"><em>frida.dma.org</em></a></p>
@@ -255,9 +211,25 @@
  Venezuelan artist and ceramist Magdalena Suarez Frimkess treats her sources of inspiration—Mickey Mouse, Aztec motifs, advertising slogans—without pretension. “I don’t know, I just paint,” she said in an interview from the L.A. studio she shares with her husband, Michael Frimkess (he throws the pottery while she paints them). The 95-year-old’s uninhibited attitude produces quirky, humorous, and sometimes unsettling works. Featuring 170 ceramics, paintings, and drawings, this is the first-ever survey of Frimkess’ five-decade career, situating her in the long line of ceramists based in California. <a href="https://www.lacma.org/art/exhibition/magdalena-suarez-frimkess-finest-disregard"><em>lacma.org</em></a></p>
 <p><strong>Toledo, “Ethiopia at the Crossroads” (Until Nov. 10)</strong><br />
  With ports reaching Europe and Asia, Ethiopia’s location fostered trade, and with it, significant cultural exchange throughout history. The artistic practices of the African country, rich in religious iconography depicting saints and royalty, were particularly influential. For instance, Italian artists coming to the country’s court in the 15th century produced paintings with the shading characteristic of the Italian Renaissance and the color palette of traditional Ethiopian icon paintings. Over 200 icons, painted manuscripts, coins, textiles, carved wood crosses, and contemporary work examine the evolution of 1,750 years of Ethiopian art and its unrecognized influence on global art history—the first exhibit in the States to do so. <a href="https://toledomuseum.org/exhibitions/ethiopia-at-the-crossroads"><em>toledomuseum.org</em></a></p></div>
+        </div>
+</div>
+
     </div>
 </div>
 
+<script>
+    $('#dropdownMenuButton').on('click', function () {
+      $('#dropdownMenu').toggleClass('show');
+    });
+  
+    // Optional: Close dropdown when clicking outside
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('#dropdownMenuButton').length) {
+        $('#dropdownMenu').removeClass('show');
+      }
+    });
+  </script>
+  
 
 </body>
 
