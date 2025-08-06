@@ -11,7 +11,12 @@
      <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
      <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
  
-     <!-- BOOTSTRAP CSS -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+    <!-- Bootstrap 4 JS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- BOOTSTRAP CSS -->
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
      <link rel="stylesheet" href="../../../static/css/main.css">
 
@@ -97,7 +102,7 @@
       height: 4px;
       background-color: red;
     }
-    button.navbar-toggler:focus {
+    button.btn:focus {
         outline: none;
         box-shadow: none;
     }
@@ -111,26 +116,27 @@
 <body>
     
     <div class="container">
-        <nav class="navbar navbar-light bg-white justify-content-between">
-            <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
-          
-            <div class="dropdown">
-              <button id="dropdownMenuButton" class="navbar-toggler" type="button" style="border-width: 0;">
-                <span class="custom-toggler-icon">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </span>
-              </button>
-          
-              <!-- ✅ Basic dropdown -->
-              <div class="dropdown-menu dropdown-menu-right" id="dropdownMenu">
-                <a class="dropdown-item" href="/portfolio/art">ART</a>
-                <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
-                <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
-              </div>
-            </div>
-          </nav>
+      <nav class="navbar navbar-light bg-white justify-content-between">
+        <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
+      
+        <div class="dropdown">
+          <button class="btn secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-width: 0;">
+          <span class="custom-toggler-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+
+          <!-- ✅ Basic dropdown -->
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/portfolio/art">ART</a>
+            <a class="dropdown-item" href="/portfolio/fashion">FASHION</a>
+            <a class="dropdown-item" href="/portfolio/contact">FEATURES</a>
+          </div>
+        </div>
+      </nav>
           
     <div class="align-items-center">
         
@@ -207,20 +213,9 @@
 
     </div>
 </div>
-
-<script>
-    $('#dropdownMenuButton').on('click', function () {
-      $('#dropdownMenu').toggleClass('show');
-    });
-  
-    // Optional: Close dropdown when clicking outside
-    $(document).on('click', function (e) {
-      if (!$(e.target).closest('#dropdownMenuButton').length) {
-        $('#dropdownMenu').removeClass('show');
-      }
-    });
-  </script>
-  
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 
