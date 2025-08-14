@@ -23,6 +23,7 @@
      <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700;900&display=swap" rel="stylesheet">
      <link rel="stylesheet" href="https://use.typekit.net/aji1rcd.css">
     </head>
+    
 <style>
     body {
         font-family: "adobe-kis", sans-serif;
@@ -91,27 +92,147 @@
 
         text-decoration-color: red;
     }
+    /* MENU */
     .custom-toggler-icon {
       width: 30px;
-      height: 30px;
+      height: 22px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: all 0.3s ease-in-out;
+      z-index: 1060; /* higher than circle */
+
+
     }
     .custom-toggler-icon span {
-      height: 4px;
+      height: 1px;
       background-color: red;
+      transition: all 0.3s ease-in-out;
+      z-index: 1060; /* higher than circle */
+
     }
     button.btn:focus {
         outline: none;
         box-shadow: none;
     }
-    .dropdown-menu {
-        border-radius: 0px;
-    }
-    .dropdown-item:active {
+    .circle-menu {
+        position: absolute !important;
+        top: 400%;
+        left: -150%;
+        transform: translate(-50%, -50%) scale(0);
+        width: 80vw;
+        height: 80vw;
+        max-width: 400px;
+        max-height: 400px;
+        border-radius: 50%;
+        border: none;
+        z-index: 1050; /* lower than hamburger */
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding: 2rem;
         background-color: red;
-    }
+        padding-left: 55px;
+
+
+}
+.circle-menu.show {
+    transform: translate(-50%, -50%) scale(1);
+    color: white; /* optional: keep text color consistent */
+
+}
+.navbar {
+  flex-wrap: nowrap !important; /* don't allow wrapping */
+  white-space: nowrap;
+}
+
+.navbar-nav {
+  flex-wrap: nowrap !important;
+}
+
+.navbar-nav .nav-item {
+  flex-shrink: 0; /* prevent items from shrinking too small */
+}
+/* Hamburger / X animation */
+.menu-open .custom-toggler-icon span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+  background-color: white; /* optional: keep text color consistent */
+
+}
+
+.menu-open .custom-toggler-icon span:nth-child(2) {
+    background-color: white; /* optional: keep text color consistent */
+  opacity: 0;
+}
+
+.menu-open .custom-toggler-icon span:nth-child(3) {
+    background-color: white; /* optional: keep text color consistent */
+
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+/* Center menu items inside circle */
+.circle-menu .menu-content {
+    text-align: center;
+    width: 100%;
+}
+
+.dropdown-item,
+.circle-menu .dropdown-item {
+    font-size: xxx-large;
+    background-color: transparent; /* remove default background */
+    color: white; /* optional: keep text color consistent */
+    width: 50%;
+}
+
+.dropdown-item:hover,
+.circle-menu .dropdown-item:hover,
+.dropdown-item:focus,
+.circle-menu .dropdown-item:focus {
+    background-color: transparent !important; /* override hover/focus */
+    color: black; /* optional */
+    text-decoration: none; /* optional: remove underline */
+}
+
+@media (max-width: 768px) {
+  .circle-menu {
+    position: fixed !important;   /* cover the viewport */
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    border-radius: 0 !important;
+    max-width: none;
+    max-height: none;
+    transform: scale(0);          /* hidden initially */
+    z-index: 1050;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    padding: 0;
+
+  }
+
+  .circle-menu.show {
+    transform: scale(1);          /* expands to full screen */
+
+  }
+
+  .circle-menu .dropdown-item {
+    font-size: xxx-large;
+    text-align: center;
+    color: white;
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
+body.menu-open {
+  overflow: hidden; /* disables scrolling */
+}
+
 </style>
 
 
@@ -123,22 +244,22 @@
         <a class="navbar-brand large-text" style="color: red;" href="/portfolio/">Vasilisa Ioukhnovets</a>
       
         <div class="dropdown">
-          <button class="btn secondary " type="button" id="dropdownMenuButton"
-          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-width: 0;">
-          <span class="custom-toggler-icon">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </button>
-
-          <!-- ✅ Basic dropdown -->
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="/portfolio/art">Art</a>
-            <a class="dropdown-item" href="/portfolio/fashion">Fashion</a>
-            <a class="dropdown-item" href="/portfolio/misc">Features</a>
-            <a class="dropdown-item" href="/portfolio/contact">Contact</a>
-          </div>
+            <button class="btn" type="button" id="menuBtn" style="border-width: 0;">
+                <span class="custom-toggler-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
+              
+              <div class="circle-menu" id="circleMenu">
+                <div class="menu-content">
+                  <a class="dropdown-item" href="/portfolio/art">Art</a>
+                  <a class="dropdown-item" href="/portfolio/fashion">Fashion</a>
+                  <a class="dropdown-item" href="/portfolio/misc">Features</a>
+                  <a class="dropdown-item" href="/portfolio/contact">Contact</a>
+                </div>
+              </div>
         </div>
       </nav>
           
@@ -227,5 +348,38 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const menuBtn = document.getElementById("menuBtn");
+  const circleMenu = document.getElementById("circleMenu");
+
+  function isMobile() {
+    return window.innerWidth <= 768; // adjust breakpoint if needed
+  }
+
+  menuBtn.addEventListener("click", function() {
+    menuBtn.classList.toggle("menu-open");
+    circleMenu.classList.toggle("show");
+
+    // Only disable body scroll on mobile
+    if (isMobile()) {
+      document.body.classList.toggle("menu-open");
+    }
+  });
+
+  // Close menu when a link is clicked
+  circleMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      menuBtn.classList.remove("menu-open");
+      circleMenu.classList.remove("show");
+      if (isMobile()) {
+        document.body.classList.remove("menu-open");
+      }
+    });
+  });
+});
+
+    </script>
+    
 
 </html>
